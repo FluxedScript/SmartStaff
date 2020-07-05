@@ -33,7 +33,11 @@ public class PlayerInteract implements Listener {
 				}else {
 					return;
 				}
-				Bukkit.broadcast(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to open a storage item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ()), "ss.use");
+				for (Player a : Bukkit.getOnlinePlayers()) {
+					if (a.getGameMode() == GameMode.CREATIVE && a.hasPermission("ss.use")) {
+						a.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to open a storage item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ()));
+					}
+				}
 				System.out.print(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to open a storage item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ()));
 				System.out.print(Bukkit.getOnlinePlayers().size() + " players were online at the time!");
 				try{
@@ -66,7 +70,11 @@ public class PlayerInteract implements Listener {
 			event.setCancelled(true);
 			player.sendMessage(ChatColor.RED + "You can't drop the item in staff mode! Your request has been logged!");
 			Location block = player.getLocation();
-			Bukkit.broadcast(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()), "ss.use");
+			for (Player a : Bukkit.getOnlinePlayers()) {
+				if (a.getGameMode() == GameMode.CREATIVE && a.hasPermission("ss.use")) {
+					a.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()));;
+				}
+			}
 			System.out.print(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()));
 			Player result = null;
 			double distance = 0;
