@@ -17,30 +17,40 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import tk.ifutureserver.smartstaff.commands.HelloCommand;
 import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
 import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
 import tk.ifutureserver.smartstaff.events.PlayerInteract;
+import tk.ifutureserver.smartstaff.util.Taxing;
 
 public class Main extends JavaPlugin implements Listener {
 	public static  Logger log = Logger.getLogger("Minecraft");
 	private static Permission perms = null;
     private static Chat chat = null;
+    private static Economy econ = null;
+    private static float taxamount = 1;
     public static String oldpassword = null;
     HttpServer server = null;
-    
+    private static Main instance;
+    public static Main getInstance(){
+        return instance;
+    }
 	@Override
     public void onEnable() {
+		instance = this;
 		if (!setupPermissions() ) {
             log.severe("SmartStaff - Disabled due to no Vault dependency found!");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+		setupEconomy();
 		StaffModeCommand.LoadData(this.getDataFolder());
 		//setupChat();
 		getConfig().options().copyDefaults(true);
 		saveConfig();
+		taxamount = (float)getConfig().getDouble("taxes");
         getLogger().info("SmartStaff is online!");
         new HelloCommand(this);
         new PlayTimeCommand(this);
@@ -60,6 +70,7 @@ public class Main extends JavaPlugin implements Listener {
         	getLogger().warning("SmartStaff couldn't launch server on port 4000");
         }
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
+        Taxing.taxing();
 	}
 	/*private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
@@ -76,6 +87,23 @@ public class Main extends JavaPlugin implements Listener {
     }
     public static Permission getPermissions() {
         return perms;
+    }
+    public static float getTaxAmount() {
+        return taxamount;
+    }
+    private boolean setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        econ = rsp.getProvider();
+        return econ != null;
+    }
+    public static Economy getEconomy() {
+        return econ;
     }
     
     public static Chat getChat() {

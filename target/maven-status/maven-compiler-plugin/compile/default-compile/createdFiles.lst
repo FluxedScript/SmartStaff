@@ -1,8 +1,10 @@
 tk\ifutureserver\smartstaff\events\PlayerInteract.class
+tk\ifutureserver\smartstaff\util\Taxing.class
 tk\ifutureserver\smartstaff\util\ChatUtils.class
 tk\ifutureserver\smartstaff\Main.class
 tk\ifutureserver\smartstaff\commands\PlayTimeCommand.class
 tk\ifutureserver\smartstaff\commands\StaffModeCommand.class
+tk\ifutureserver\smartstaff\util\Taxing$1.class
 tk\ifutureserver\smartstaff\Main$MyHandler.class
 tk\ifutureserver\smartstaff\events\BlockPlace.class
 tk\ifutureserver\smartstaff\commands\HelloCommand.class
