@@ -132,7 +132,7 @@ public class PlayTimeCommand implements CommandExecutor {
 	        	if (count == (12*pagenum)) {
 	        		if (pagenum < pages) {
 	    	        	if (pagenum + 1 < pages) {
-	    	        		leaderboard.add(ChatColor.GOLD+"Type "+ChatColor.RED+"/playtime top "+pagenum+1+ChatColor.GOLD+" to read the next page!");
+	    	        		leaderboard.add(ChatColor.GOLD+"Type "+ChatColor.RED+"/playtime top "+(pagenum+1)+ChatColor.GOLD+" to read the next page!");
 	    	        	}
 	    	        }
 	        		return leaderboard;

@@ -22,6 +22,7 @@ import net.milkbowl.vault.permission.Permission;
 import tk.ifutureserver.smartstaff.commands.HelloCommand;
 import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
 import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
+import tk.ifutureserver.smartstaff.commands.TaxUser;
 import tk.ifutureserver.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.smartstaff.util.Taxing;
 
@@ -53,6 +54,7 @@ public class Main extends JavaPlugin implements Listener {
 		taxamount = (float)getConfig().getDouble("taxes");
         getLogger().info("SmartStaff is online!");
         new HelloCommand(this);
+        new TaxUser(this);
         new PlayTimeCommand(this);
         new StaffModeCommand(this);
         try {

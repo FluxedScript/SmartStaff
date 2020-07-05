@@ -17,6 +17,10 @@ commands:
     description: Player time
     usage: /playtime
     aliases: [pt]
+  taxall:
+    description: Tax all players
+    usage: /taxall
+    aliases: [taxday,collecttaxes]
 permissions:
   ss.use:
       description: to use /staff mode
