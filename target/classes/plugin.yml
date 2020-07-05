@@ -1,0 +1,47 @@
+name: SmartStaff
+author: FluxedScript
+description: Get a custom head!
+version: 1.1
+main: tk.ifutureserver.smartstaff.Main
+depend: [Vault]
+commands:
+  bbtest:
+    description: Test the plugin
+    usage: /bbtest
+  staffmode:
+    description: Staff mode
+    usage: /staffmode
+    permission: ss.use
+    aliases: [staff,sm,rpmode]
+  playtime:
+    description: Player time
+    usage: /playtime
+    aliases: [pt]
+permissions:
+  ss.use:
+      description: to use /staff mode
+      default: false
+  ss.trialmod:
+      description: For Trial mods
+      default: false
+  ss.mod:
+      description: For mods
+      default: false
+  ss.admin:
+      description: For admins
+      default: false
+  ss.sradmin:
+      description: For senior admins
+      default: false
+  ss.dev:
+      description: For devs
+      default: false
+  ss.executive:
+      description: For executives
+      default: false
+  ss.direct:
+      description: For directors
+      default: false
+  ss.owner:
+      description: For owners
+      default: false
