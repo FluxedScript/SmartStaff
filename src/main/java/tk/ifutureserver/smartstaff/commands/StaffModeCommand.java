@@ -68,6 +68,8 @@ public class StaffModeCommand implements CommandExecutor {
 			    		  FinalRank = "Dev";
 			    	} else if(player.hasPermission("ss.executive")) {
 			    		  FinalRank = "Executive";
+			    	} else if(player.hasPermission("ss.servermanager")) {
+			    		  FinalRank = "ServerManager";
 			    	} else if(player.hasPermission("ss.direct")) {
 			    		  FinalRank = "Direct";
 			    	} else if(player.hasPermission("ss.owner")) {
