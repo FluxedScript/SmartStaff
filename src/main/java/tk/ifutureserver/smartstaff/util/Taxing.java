@@ -34,16 +34,6 @@ public class Taxing  implements Listener {
     	    		Bukkit.broadcastMessage(ChatColor.GOLD+"Taxed "+ChatColor.RED+count+" users.");
     	            
     	        }
-    	    	for (OfflinePlayer player: Bukkit.getOfflinePlayers()) {
-    	    		System.out.print("-----------------------");
-	    			double balance = econ.getBalance(player);
-	    			System.out.print(balance);
-	    			double endbalance =   (balance*(Main.getTaxAmount()/100.0f));
-	    			System.out.print(endbalance);
-	    			EconomyResponse response = econ.withdrawPlayer(player,Math.round(endbalance));
-	    			System.out.print(response.type);
-	    			System.out.print("-----------------------");
-	        	}
     	    }
     	}, 0L, 40L); //0 Tick initial delay, 20 Tick (1 Second) between repeats
     }
