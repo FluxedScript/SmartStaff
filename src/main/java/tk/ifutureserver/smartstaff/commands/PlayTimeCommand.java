@@ -126,22 +126,16 @@ public class PlayTimeCommand implements CommandExecutor {
 	        	}else if (count == 3) {
 	        		leaderboard.add(ChatColor.GREEN+""+count+". "+ value + ", " +getShortTime(key));
 	        	} else {
-	        		leaderboard.add(count+". "+ value + ", " +getShortTime(key));
+	        		leaderboard.add(ChatColor.GREEN+""+count+". "+ value + ", " +getShortTime(key));
 	        	}
-	        	
 	        	if (count == (12*pagenum)) {
-	        		if (pagenum < pages) {
-	    	        	if (pagenum + 1 < pages) {
-	    	        		leaderboard.add(ChatColor.GOLD+"Type "+ChatColor.RED+"/playtime top "+(pagenum+1)+ChatColor.GOLD+" to read the next page!");
-	    	        	}
-	    	        }
-	        		return leaderboard;
+	        		break;
 	        	} else if (count == (12*(pagenum-1))) {
 	        		leaderboard.removeAll(leaderboard);
+	        		leaderboard.add(ChatColor.YELLOW+"------ "+ChatColor.GOLD+"PlayTimes"+ChatColor.YELLOW+" -- "+ChatColor.GOLD+"Page "+ChatColor.RED+pagenum+ChatColor.GOLD+"/"+ChatColor.RED+pages+ChatColor.GOLD+"----");
 	        	}
 	        }
-	        
-	        
+	        leaderboard.add(ChatColor.GOLD+"Type "+ChatColor.RED+"/playtime top "+(pagenum+1)+ChatColor.GOLD+" to read the next page!");
 	        return leaderboard;
 		  } else {
 			  return null;

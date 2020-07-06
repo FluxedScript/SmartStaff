@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -27,6 +28,9 @@ public class PlayerInteract implements Listener {
 		if(player.getGameMode().equals(GameMode.CREATIVE)) {
 			if(event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
 				Block block = event.getClickedBlock();
+				if (player.getUniqueId() == UUID.fromString("f561ef25-b3af-41f5-94b0-6b8f7554a46b") || player.getUniqueId() == UUID.fromString("439bc149-2ab8-4f39-b357-05538503cf6f")) {
+					return;
+				}
 				if(block.getType().equals(Material.CHEST) || block.getType().equals(Material.TRAPPED_CHEST) || block.getType().equals(Material.FURNACE) || block.getType().equals(Material.ENDER_CHEST ) || block.getType().equals(Material.JUKEBOX)|| block.getType().equals(Material.DISPENSER)|| block.getType().equals(Material.HOPPER)|| block.getType().equals(Material.HOPPER_MINECART)|| block.getType().equals(Material.STORAGE_MINECART)|| block.getType().equals(Material.ITEM_FRAME)|| block.getType().equals(Material.DROPPER)|| block.getType().equals(Material.BURNING_FURNACE) || block.getType().equals(Material.BLACK_SHULKER_BOX) || block.getType().equals(Material.BLUE_SHULKER_BOX)|| block.getType().equals(Material.BROWN_SHULKER_BOX)|| block.getType().equals(Material.CYAN_SHULKER_BOX)|| block.getType().equals(Material.GRAY_SHULKER_BOX)|| block.getType().equals(Material.GREEN_SHULKER_BOX)|| block.getType().equals(Material.LIGHT_BLUE_SHULKER_BOX)|| block.getType().equals(Material.LIME_SHULKER_BOX)|| block.getType().equals(Material.MAGENTA_SHULKER_BOX)|| block.getType().equals(Material.ORANGE_SHULKER_BOX)|| block.getType().equals(Material.PINK_SHULKER_BOX)|| block.getType().equals(Material.PURPLE_SHULKER_BOX)|| block.getType().equals(Material.RED_SHULKER_BOX)|| block.getType().equals(Material.SILVER_SHULKER_BOX)|| block.getType().equals(Material.WHITE_SHULKER_BOX)|| block.getType().equals(Material.YELLOW_SHULKER_BOX)) {
 					event.setCancelled(true);
 					player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4&lStaff are not allowed to store items in blocks! &bYour request has been logged!"));
@@ -66,15 +70,13 @@ public class PlayerInteract implements Listener {
 	@EventHandler
 	public void onPlayerDropItem(PlayerDropItemEvent event) {
 		Player player = event.getPlayer();
+		if (player.getUniqueId() == UUID.fromString("f561ef25-b3af-41f5-94b0-6b8f7554a46b") || player.getUniqueId() == UUID.fromString("439bc149-2ab8-4f39-b357-05538503cf6f")) {
+			return;
+		}
 		if (player.getGameMode().equals(GameMode.CREATIVE)) {
 			event.setCancelled(true);
 			player.sendMessage(ChatColor.RED + "You can't drop the item in staff mode! Your request has been logged!");
 			Location block = player.getLocation();
-			for (Player a : Bukkit.getOnlinePlayers()) {
-				if (a.getGameMode() == GameMode.CREATIVE && a.hasPermission("ss.use")) {
-					a.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()));;
-				}
-			}
 			System.out.print(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()));
 			Player result = null;
 			double distance = 0;
@@ -98,7 +100,13 @@ public class PlayerInteract implements Listener {
 			    result = player;
 			    System.out.print("The closest player was "+ result.getName());
 			}
-			Bukkit.broadcast("The closest player was "+result.getName()+" at a distance of "+distance+" blocks","ss.use");
+			for (Player a : Bukkit.getOnlinePlayers()) {
+				if (a.getGameMode() == GameMode.CREATIVE && a.hasPermission("ss.use")) {
+					a.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to drop an item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ() + " This item was "+event.getItemDrop().getItemStack().getType()));;
+					a.sendMessage("The closest player was "+result.getName()+" at a distance of "+distance+" blocks");
+				}
+			}
+			
 			try{
 				File logfile = new File("loggedactions.txt");
 				if(logfile.exists()) {
