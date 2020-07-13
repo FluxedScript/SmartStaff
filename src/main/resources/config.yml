@@ -1,4 +1,5 @@
 test: true
-RMTpass: "LinuxRulesDonald"
+RMTpass: "LinuxRulesDonald" #Remote access passwor
 #Permission plugin group ; permission you want to use
-taxes: 6.5
+taxes: 6.5 #Percentage tax to execute
+DefaultRank: "Citizen" #What rank do you want everyone to have
