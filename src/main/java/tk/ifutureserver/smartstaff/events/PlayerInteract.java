@@ -21,6 +21,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import tk.ifutureserver.smartstaff.Main;
+
 public class PlayerInteract implements Listener {
 	@EventHandler
     public void onInteract(PlayerInteractEvent event){
@@ -45,7 +47,7 @@ public class PlayerInteract implements Listener {
 				System.out.print(ChatColor.translateAlternateColorCodes('&',"&4"+player.getName()+" &ltried to open a storage item &rat location "+block.getX()+" , "+block.getY()+" , "+block.getZ()));
 				System.out.print(Bukkit.getOnlinePlayers().size() + " players were online at the time!");
 				try{
-					File logfile = new File("loggedactions.txt");
+					File logfile = new File(Main.fetchDataFolder(),"loggedactions.txt");
 					if(logfile.exists()) {
 						;
 					} else {
@@ -108,7 +110,7 @@ public class PlayerInteract implements Listener {
 			}
 			
 			try{
-				File logfile = new File("loggedactions.txt");
+				File logfile = new File(Main.fetchDataFolder(),"loggedactions.txt");
 				if(logfile.exists()) {
 					;
 				} else {

@@ -10,39 +10,40 @@ import org.bukkit.command.CommandSender;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import tk.ifutureserver.smartstaff.Main;
+
 public class TaxUser implements CommandExecutor {
 	static Economy econ = Main.getEconomy();
 	@SuppressWarnings("unused")
 	private Main plugin;
-	
+
 	public TaxUser(Main plugin) {
 		this.plugin = plugin;
 		plugin.getCommand("taxall").setExecutor(this);
 	}
+
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender.hasPermission("ss.tax")) {
+		if (sender.hasPermission("ss.tax")) {
 			int count = 0;
-			for (OfflinePlayer player: Bukkit.getOfflinePlayers()) {
+			for (OfflinePlayer player : Bukkit.getOfflinePlayers()) {
 				try {
 					double balance = econ.getBalance(player);
-					double endbalance =   (balance*(Main.getTaxAmount()/100.0f));
-					EconomyResponse response = econ.withdrawPlayer(player,Math.round(endbalance));
-					if(response.type == EconomyResponse.ResponseType.FAILURE){
-						System.out.print("Error taxing "+player.getName());
+					double endbalance = (balance * (Main.getTaxAmount() / 100.0f));
+					EconomyResponse response = econ.withdrawPlayer(player, Math.round(endbalance));
+					if (response.type == EconomyResponse.ResponseType.FAILURE) {
+						System.out.print("Error taxing " + player.getName());
 					} else {
-						count ++;
+						count++;
 					}
-				} catch(Exception e) {
+				} catch (Exception e) {
 					;
 				}
-				
+
 			}
-			Bukkit.broadcastMessage(ChatColor.GOLD+"Taxed "+ChatColor.RED+count+" users.");
+			Bukkit.broadcastMessage(ChatColor.GOLD + "Taxed " + ChatColor.RED + count + " users.");
 		} else {
-			sender.sendMessage(ChatColor.DARK_RED+"You do not have permissions to execute this command!");
+			sender.sendMessage(ChatColor.DARK_RED + "You do not have permissions to execute this command!");
 		}
-		
+
 		return true;
 	}
 }
-

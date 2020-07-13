@@ -1,9 +1,14 @@
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\TabComplete.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\Main.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\AddStaffCommand.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\StaffInfoCommand.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\UpdateRankCommand.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\events\BlockPlace.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\PlayTimeCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\StaffModeCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\TaxUser.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\ChatUtils.java
-C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\Main.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\Taxing.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\HelloCommand.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\RemoveStaffCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\events\PlayerInteract.java
-C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\events\BlockPlace.java

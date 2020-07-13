@@ -1,5 +1,6 @@
 package tk.ifutureserver.smartstaff;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -19,10 +20,14 @@ import com.sun.net.httpserver.HttpServer;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import tk.ifutureserver.smartstaff.commands.AddStaffCommand;
 import tk.ifutureserver.smartstaff.commands.HelloCommand;
 import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
+import tk.ifutureserver.smartstaff.commands.RemoveStaffCommand;
+import tk.ifutureserver.smartstaff.commands.StaffInfoCommand;
 import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
 import tk.ifutureserver.smartstaff.commands.TaxUser;
+import tk.ifutureserver.smartstaff.commands.UpdateRankCommand;
 import tk.ifutureserver.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.smartstaff.util.Taxing;
 
@@ -33,6 +38,8 @@ public class Main extends JavaPlugin implements Listener {
     private static Economy econ = null;
     private static float taxamount = 1;
     public static String oldpassword = null;
+    public static String defaultrank = null;
+    public static File DataFolder = null;
     HttpServer server = null;
     private static Main instance;
     public static Main getInstance(){
@@ -52,11 +59,17 @@ public class Main extends JavaPlugin implements Listener {
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		taxamount = (float)getConfig().getDouble("taxes");
+		defaultrank = getConfig().getString("DefaultRank");
+		DataFolder = getDataFolder();
         getLogger().info("SmartStaff is online!");
         new HelloCommand(this);
         new TaxUser(this);
         new PlayTimeCommand(this);
         new StaffModeCommand(this);
+        new StaffInfoCommand(this);
+        new AddStaffCommand(this);
+        new RemoveStaffCommand(this);
+        new UpdateRankCommand(this);
         try {
 			server = HttpServer.create(new InetSocketAddress(4000), 0);
 		} catch (IOException e) {
@@ -92,6 +105,12 @@ public class Main extends JavaPlugin implements Listener {
     }
     public static float getTaxAmount() {
         return taxamount;
+    }
+    public static String getDefaultRank() {
+        return defaultrank;
+    }
+    public static File fetchDataFolder() {
+        return DataFolder;
     }
     private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
