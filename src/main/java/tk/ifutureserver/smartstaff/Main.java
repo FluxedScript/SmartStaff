@@ -21,13 +21,16 @@ import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import tk.ifutureserver.smartstaff.commands.AddStaffCommand;
+import tk.ifutureserver.smartstaff.commands.CreateRoleCommand;
 import tk.ifutureserver.smartstaff.commands.HelloCommand;
 import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
+import tk.ifutureserver.smartstaff.commands.RemoveRoleCommand;
 import tk.ifutureserver.smartstaff.commands.RemoveStaffCommand;
 import tk.ifutureserver.smartstaff.commands.StaffInfoCommand;
 import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
 import tk.ifutureserver.smartstaff.commands.TaxUser;
 import tk.ifutureserver.smartstaff.commands.UpdateRankCommand;
+import tk.ifutureserver.smartstaff.commands.ViewRolesCommand;
 import tk.ifutureserver.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.smartstaff.util.Taxing;
 
@@ -69,7 +72,10 @@ public class Main extends JavaPlugin implements Listener {
         new StaffInfoCommand(this);
         new AddStaffCommand(this);
         new RemoveStaffCommand(this);
+        new RemoveRoleCommand(this);
+        new CreateRoleCommand(this);
         new UpdateRankCommand(this);
+        new ViewRolesCommand(this);
         try {
 			server = HttpServer.create(new InetSocketAddress(4000), 0);
 		} catch (IOException e) {
@@ -136,7 +142,7 @@ public class Main extends JavaPlugin implements Listener {
         Bukkit.broadcastMessage("SmartStaff - Saving data");
         StaffModeCommand.SaveData(this.getDataFolder());
         Bukkit.broadcastMessage("SmartStaff - Saved data");
-        server.stop(1);
+        server.stop(0);
     }
     static class MyHandler implements HttpHandler {
         @Override

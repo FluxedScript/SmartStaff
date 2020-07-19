@@ -23,11 +23,11 @@ public class CreateRoleCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			if (args.length < 1) {
+			if (args.length == 0) {
 				sender.sendMessage(ChatColor.RED + "Please specify a role name!");
 				return true;
 			}
-			if (args.length < 2) {
+			if (args.length == 1) {
 				sender.sendMessage(ChatColor.RED + "Please specify a pex group!");
 				return true;
 			}
@@ -39,8 +39,7 @@ public class CreateRoleCommand implements CommandExecutor {
 				sender.sendMessage("This role already exists!");
 				return true;
 			} else {
-				sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-						+ "/addrole <role> <pexgroup>");
+				StaffModeCommand.MakeRole(args[0], "console", args[1]);
 				return true;
 			}
 		}
@@ -50,11 +49,7 @@ public class CreateRoleCommand implements CommandExecutor {
 			return true;
 		}
 		if (StaffModeCommand.roles.containsKey(args[1].toLowerCase())) {
-			;
-		} else {
-			player.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-					+ "/smartstaff addstaff <name> <role>");
-			return true;
+			player.sendMessage(ChatColor.RED + "This role already exists! ");
 		}
 		UUID staffmember = Bukkit.getPlayerExact(args[0]).getUniqueId();
 		if (staffmember == null) {
@@ -67,7 +62,7 @@ public class CreateRoleCommand implements CommandExecutor {
 			return true;
 		}
 		if (StaffModeCommand.CanManage(rank.toLowerCase(), args[1].toLowerCase())) { // if other role isn't allowed
-			StaffModeCommand.addStaff(staffmember, args[1]);
+			StaffModeCommand.MakeRole(args[0].toLowerCase(), rank.toLowerCase(), args[1]);
 			player.sendMessage(ChatColor.GREEN + "Added player to staff!");
 			return true;
 		} else {

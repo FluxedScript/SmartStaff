@@ -28,8 +28,11 @@ public class UpdateRankCommand implements CommandExecutor {
 				return true;
 			}
 			if (StaffModeCommand.roles.containsKey(args[1].toLowerCase())) {
+				;
+			} else {
 				sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
 						+ "/updatestaff <name> <role>");
+				return true;
 			}
 			UUID staffmember = Bukkit.getPlayerExact(args[0]).getUniqueId();
 			if (staffmember == null) {
@@ -37,7 +40,7 @@ public class UpdateRankCommand implements CommandExecutor {
 				return true;
 			}
 			StaffModeCommand.UpdateStaff(staffmember, args[1]);
-			sender.sendMessage(ChatColor.GREEN + "Updated member staff!");
+			sender.sendMessage(ChatColor.GREEN + "Updated staff member!");
 			return true;
 		}
 		Player player = (Player) sender;

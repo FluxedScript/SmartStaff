@@ -24,39 +24,39 @@ public class RemoveRoleCommand implements CommandExecutor {
 				sender.sendMessage(ChatColor.RED + "Please specify a role name!");
 				return true;
 			}
-			if (StaffModeCommand.roles.containsKey(args[1].toLowerCase())) {
-				StaffModeCommand.RemoveRole(args[1].toLowerCase(), "console");
+			if (StaffModeCommand.roles.containsKey(args[0].toLowerCase())) {
+				StaffModeCommand.RemoveRole(args[0].toLowerCase(), "console");
 				sender.sendMessage(ChatColor.GREEN+"Removed role!");
 				return true;
 			} else {
 				sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-						+ "/removerole <name> <role>");
+						+ "/removerole <role>");
 				return true;
 			}
 		}
 		Player player = (Player) sender;
-		if (args.length < 2) {
+		if (args.length < 1) {
 			player.sendMessage(ChatColor.RED + "Please specify a role name!");
 			return true;
 		}
-		if (StaffModeCommand.roles.containsKey(args[1].toLowerCase())) {
-			;
+		if (StaffModeCommand.roles.containsKey(args[0].toLowerCase())) {
+			String rank = StaffModeCommand.isStaff(player.getUniqueId());
+			if (rank == null) {
+				player.sendMessage(ChatColor.DARK_RED+"You do not have permission to execute this command!");
+				return true;
+			}
+			if (StaffModeCommand.RemoveRole(args[1].toLowerCase(), rank) == true) { // if other role isn't allowed
+				player.sendMessage(ChatColor.GREEN+"Removed role!");
+				return true;
+			} else {
+				player.sendMessage(ChatColor.DARK_RED+"You do not have permission to execute this command!");
+				return true;
+			}
 		} else {
 			player.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
 					+ "/removerole <name> <role>");
 			return true;
 		}
-		String rank = StaffModeCommand.isStaff(player.getUniqueId());
-		if (rank == null) {
-			player.sendMessage(ChatColor.DARK_RED+"You do not have permission to execute this command!");
-			return true;
-		}
-		if (StaffModeCommand.RemoveRole(args[1].toLowerCase(), rank) == true) { // if other role isn't allowed
-			player.sendMessage(ChatColor.GREEN+"Removed role!");
-			return true;
-		} else {
-			player.sendMessage(ChatColor.DARK_RED+"You do not have permission to execute this command!");
-			return true;
-		}
+		
 	}
 }

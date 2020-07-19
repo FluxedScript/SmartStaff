@@ -1,4 +1,5 @@
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\TabComplete.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\ViewRolesCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\Main.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\AddStaffCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\StaffInfoCommand.java
@@ -9,6 +10,8 @@ C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartsta
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\TaxUser.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\ChatUtils.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\util\Taxing.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\CreateRoleCommand.java
+C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\RemoveRoleCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\HelloCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\commands\RemoveStaffCommand.java
 C:\Users\TK\eclipse-workspace\smartstaff\src\main\java\tk\ifutureserver\smartstaff\events\PlayerInteract.java

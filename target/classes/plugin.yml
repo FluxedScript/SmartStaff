@@ -37,6 +37,18 @@ commands:
     description: Removes staff member
     usage: /removestaff
     aliases: [rstaff,remstaff,firestaff]
+  viewroles:
+    description: Staff mode roles
+    usage: /viewroles
+    aliases: [rolelist,staffmoderlist,sml]
+  removerole:
+    description: Staff mode remove role
+    usage: /removerole
+    aliases: [rmvrole,rmrole,delrole]
+  addrole:
+    description: Staff mode add role
+    usage: /addrole
+    aliases: [adrole,createrole,makerole]
 permissions:
   ss.use:
       description: to use /staff mode

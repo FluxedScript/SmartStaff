@@ -10,7 +10,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import tk.ifutureserver.smartstaff.Main;
-import tk.ifutureserver.smartstaff.util.TabComplete;
 
 public class RemoveStaffCommand implements CommandExecutor {
 
@@ -19,11 +18,12 @@ public class RemoveStaffCommand implements CommandExecutor {
 
 	public RemoveStaffCommand(Main plugin) {
 		this.plugin = plugin;
-		plugin.getCommand("removestaff").setTabCompleter(new TabComplete());
+		plugin.getCommand("removestaff").setExecutor(this);
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) {
+			System.out.print("Executes");
 			if (args.length < 1) {
 				sender.sendMessage(ChatColor.RED + "Please specify a user to remove from staff!");
 				return true;
@@ -37,6 +37,7 @@ public class RemoveStaffCommand implements CommandExecutor {
 			StaffModeCommand.removeStaff(staffmember);
 			return true;
 		}
+		System.out.print("Executes2");
 		Player player = (Player) sender;
 		if (args.length < 1) {
 			player.sendMessage(ChatColor.RED + "Please specify a user to remove from staff!");
