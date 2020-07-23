@@ -20,10 +20,12 @@ import com.sun.net.httpserver.HttpServer;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import tk.ifutureserver.smartstaff.commands.AddPermCommand;
 import tk.ifutureserver.smartstaff.commands.AddStaffCommand;
 import tk.ifutureserver.smartstaff.commands.CreateRoleCommand;
 import tk.ifutureserver.smartstaff.commands.HelloCommand;
 import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
+import tk.ifutureserver.smartstaff.commands.RemovePermCommand;
 import tk.ifutureserver.smartstaff.commands.RemoveRoleCommand;
 import tk.ifutureserver.smartstaff.commands.RemoveStaffCommand;
 import tk.ifutureserver.smartstaff.commands.StaffInfoCommand;
@@ -32,6 +34,7 @@ import tk.ifutureserver.smartstaff.commands.TaxUser;
 import tk.ifutureserver.smartstaff.commands.UpdateRankCommand;
 import tk.ifutureserver.smartstaff.commands.ViewRolesCommand;
 import tk.ifutureserver.smartstaff.events.PlayerInteract;
+import tk.ifutureserver.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.smartstaff.util.Taxing;
 
 public class Main extends JavaPlugin implements Listener {
@@ -76,6 +79,8 @@ public class Main extends JavaPlugin implements Listener {
         new CreateRoleCommand(this);
         new UpdateRankCommand(this);
         new ViewRolesCommand(this);
+        new AddPermCommand(this);
+        new RemovePermCommand(this);
         try {
 			server = HttpServer.create(new InetSocketAddress(4000), 0);
 		} catch (IOException e) {
@@ -91,6 +96,7 @@ public class Main extends JavaPlugin implements Listener {
         	getLogger().warning("SmartStaff couldn't launch server on port 4000");
         }
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         Taxing.taxing();
 	}
 	/*private boolean setupChat() {

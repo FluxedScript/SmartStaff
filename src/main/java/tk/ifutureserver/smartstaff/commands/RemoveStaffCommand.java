@@ -28,7 +28,8 @@ public class RemoveStaffCommand implements CommandExecutor {
 				sender.sendMessage(ChatColor.RED + "Please specify a user to remove from staff!");
 				return true;
 			}
-			UUID staffmember = Bukkit.getPlayerExact(args[0]).getUniqueId();
+			@SuppressWarnings("deprecation")
+			UUID staffmember = Bukkit.getOfflinePlayer(args[0]).getUniqueId();
 			if (staffmember == null) {
 				sender.sendMessage("Player not found!");
 				sender.sendMessage(ChatColor.GREEN + "Removed player from staff!");

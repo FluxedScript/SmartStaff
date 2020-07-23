@@ -39,10 +39,12 @@ public class StaffModeCommand implements CommandExecutor {
 																			// else/local
 	static ArrayList<UUID> allowedusers = new ArrayList<UUID>(); // Can easily remove/add people with a command //Add
 																	// else/read local
-	public static HashMap<String, ArrayList<String>> roles = new HashMap<String, ArrayList<String>>(); // Role name list
+	static HashMap<String, ArrayList<String>> roles = new HashMap<String, ArrayList<String>>(); // Role name list
 																										// of roles they
 																										// can manage or permission
 	static HashMap<String, String> rolearray = new HashMap<String, String>(); //Rank and pex rank
+	
+	static ArrayList<UUID> needsfiring = new ArrayList<UUID>(); //people that need to be put in gms and inv reset False if out of staffmode on firing True if needs to be reset.
 	Main plugin;
 
 	public static Logger log = Logger.getLogger("Minecraft");
@@ -352,42 +354,50 @@ public class StaffModeCommand implements CommandExecutor {
 		}
 
 	}
+	public static boolean addPerm(String role, String senderrank,String perm) { // Adds staff to allowed
+		if(!(roles.get(senderrank).contains("MANAGE_ROLES") || roles.get(senderrank).contains("ADMINISTRATOR"))) {
+			return false; //So if they don't have the permissions to do it
+		}
+		ArrayList<String> perms= roles.get(role); // Perms console has always
+		perms.add(perm.toUpperCase());
+		roles.remove(role.toLowerCase());
+		roles.put(role.toLowerCase(), perms); //If no role found
+		return true;
 
+	}
+	public static boolean removePerm(String role, String senderrank, String perm) { // Adds staff to allowed
+		if(!(roles.get(senderrank).contains("MANAGE_ROLES") || roles.get(senderrank).contains("ADMINISTRATOR"))) {
+			return false; //So if they don't have the permissions to do it
+		}
+		ArrayList<String> perms= roles.get(role); // Perms console has always
+		perms.remove(perm.toUpperCase());
+		roles.remove(role.toLowerCase());
+		roles.put(role.toLowerCase(), perms); //If no role found
+		return true;
+
+	}
+	public static Boolean befired(UUID idkey) {
+		if (needsfiring.contains(idkey)) {
+			needsfiring.remove(idkey);
+			return true;
+		}
+		return false;
+	}
 	public static void removeStaff(UUID idkey) { // Deletes staff from allowed
-		//allowedusers.remove(idkey);// Removes from allowed
-		//usersroles.remove(idkey); // Disables account roles so actions can't be performed
-		//activeusers.remove(idkey);
 		OfflinePlayer playeroffline = Bukkit.getOfflinePlayer(idkey);
 		if (playeroffline.isOnline() == true) { //if player is online
 			DecimalFormat df = new DecimalFormat("0.00");
-			String FinalRank = null; // Initialise the staff rank variable as null
 			Player player = playeroffline.getPlayer(); // Get player from sender to send messages
 			String[] groups = permissions.getPlayerGroups(player);// gets the groups the player is in
 			ArrayList<String> values = new ArrayList<String>(); // local storage for groups that are removed
 			if (!(activeusers.contains(player.getUniqueId()))) { // if user is not currently in staffmode
-				
-				// ALREADY IN RP GOING INTO STAFFMODE
-				
-				FinalRank = rolearray.get(usersroles.get(player.getUniqueId())); //Get role from uuid and get pex group from role.
-				for (String s : groups) {
-					System.out.print(s);
-					permissions.playerRemoveGroup(null, player, s);
-					values.add(s);
-				}
-				System.out.print(FinalRank);
-				permissions.playerAddGroup(null, player, FinalRank);
-				userranks.put(player.getUniqueId(), values); // puts the rp roles into memory for later
-				activeusers.add(player.getUniqueId()); // adds the player into the currently active staff members
-				// save the group to a list with the player uuid then the group they got removed
-				// from which would be an rp group
-				Bukkit.getServer().broadcastMessage(
-						ChatColor.translateAlternateColorCodes('&', player.getName() + " &cis now in &4&lSTAFF MODE"));
+				allowedusers.remove(idkey);// Removes from allowed
+				usersroles.remove(idkey); // Disables account roles so actions can't be performed
 				return;// broadcasts to the server
 			} else if (activeusers.contains(player.getUniqueId())) { // if player is in staff mode
 				
 				//IN STAFF MODE GOING TO RP MODE
 				for (String s : groups) {
-					System.out.print("Removed "+s);
 					permissions.playerRemoveGroup(null, player, s);
 				}
 				System.out.print(values);
@@ -397,7 +407,7 @@ public class StaffModeCommand implements CommandExecutor {
 			        player.removePotionEffect(effect.getType());
 				Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
 				Location currentloc = player.getLocation();
-				Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-1.0, 0);
+				Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-2.0, 0);
 				player.teleport(oldloc);
 				player.getEquipment().clear();
 				player.getInventory().clear();
@@ -425,6 +435,7 @@ public class StaffModeCommand implements CommandExecutor {
 						break; // Found
 					}
 				}
+				
 				userranks.remove(player.getUniqueId()); // Remove rp role from storage to save on ram usage
 				activeusers.remove(player.getUniqueId()); // Remove from online users
 				allowedusers.remove(idkey);// Removes from allowed
@@ -434,8 +445,54 @@ public class StaffModeCommand implements CommandExecutor {
 				return;
 				
 			}
-		} else {
-			//add to a list to check on join
+		} else { //player is not online
+			if (activeusers.contains(idkey)){  // in staffmode
+				needsfiring.add(idkey);
+				OfflinePlayer player = Bukkit.getOfflinePlayer(idkey);
+				String[] groups = permissions.getPlayerGroups(null, player);
+				ArrayList<String> values = new ArrayList<String>(); // local storage for groups that are removed
+				for (String s : groups) {
+					permissions.playerRemoveGroup(null, player, s);
+				}
+				
+				for (Entry<UUID, ArrayList<String>> entry : userranks.entrySet()) { // get the group they had before
+																					// they went into staff
+					if (entry.getKey().equals(player.getUniqueId())) { // if player id == hashmap id
+						System.out.print("executes222");
+						values = entry.getValue();
+						ArrayList<String> newvalues = values;
+						int count = 0;
+						for (String usergroupi : newvalues) {
+							if (usergroupi.equalsIgnoreCase(defaultrank)) { // Checks if first value is default
+								;
+							} else {
+								count += 1;
+								permissions.playerAddGroup(null, player, usergroupi); // adds each rp role back but
+																						// avoids the default unless no
+																						// roles are there
+							}
+						}
+						if (count == 0) {// if no other roles are found
+							permissions.playerAddGroup(null, player, defaultrank); // Adds the default role
+						}
+						break; // Found
+					}
+				}
+				
+				userranks.remove(idkey); // Remove rp role from storage to save on ram usage
+				activeusers.remove(idkey); // Remove from online users
+				allowedusers.remove(idkey);// Removes from allowed
+				usersroles.remove(idkey); // Disables account roles so actions can't be performed
+				activeusers.remove(idkey);
+				return;
+			} else {
+				userranks.remove(idkey); // Remove rp role from storage to save on ram usage
+				activeusers.remove(idkey); // Remove from online users
+				allowedusers.remove(idkey);// Removes from allowed
+				usersroles.remove(idkey); // Disables account roles so actions can't be performed
+				activeusers.remove(idkey);
+				return;
+			}
 		}
 		
 	}

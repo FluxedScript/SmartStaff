@@ -4,10 +4,13 @@ tk\ifutureserver\smartstaff\events\PlayerInteract.class
 tk\ifutureserver\smartstaff\util\Taxing.class
 tk\ifutureserver\smartstaff\commands\RemoveRoleCommand.class
 tk\ifutureserver\smartstaff\util\ChatUtils.class
+tk\ifutureserver\smartstaff\commands\RemovePermCommand.class
+tk\ifutureserver\smartstaff\commands\AddPermCommand.class
 tk\ifutureserver\smartstaff\commands\CreateRoleCommand.class
 tk\ifutureserver\smartstaff\commands\StaffModeCommand.class
 tk\ifutureserver\smartstaff\util\Taxing$1.class
 tk\ifutureserver\smartstaff\commands\StaffInfoCommand.class
+tk\ifutureserver\smartstaff\events\PlayerJoin.class
 tk\ifutureserver\smartstaff\commands\UpdateRankCommand.class
 tk\ifutureserver\smartstaff\util\TabComplete.class
 tk\ifutureserver\smartstaff\Main.class

@@ -49,31 +49,11 @@ commands:
     description: Staff mode add role
     usage: /addrole
     aliases: [adrole,createrole,makerole]
-permissions:
-  ss.use:
-      description: to use /staff mode
-      default: false
-  ss.trialmod:
-      description: For Trial mods
-      default: false
-  ss.mod:
-      description: For mods
-      default: false
-  ss.admin:
-      description: For admins
-      default: false
-  ss.sradmin:
-      description: For senior admins
-      default: false
-  ss.dev:
-      description: For devs
-      default: false
-  ss.executive:
-      description: For executives
-      default: false
-  ss.direct:
-      description: For directors
-      default: false
-  ss.owner:
-      description: For owners
-      default: false
+  permremove:
+    description: Staff mode remove perm
+    usage: /permremove
+    aliases: [removeperm,smpermremove]
+  permadd:
+    description: Staff mode add perm
+    usage: /permadd
+    aliases: [addperm]

@@ -1,8 +1,5 @@
 package tk.ifutureserver.smartstaff.commands;
 
-import java.util.UUID;
-
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -40,34 +37,31 @@ public class CreateRoleCommand implements CommandExecutor {
 				return true;
 			} else {
 				StaffModeCommand.MakeRole(args[0], "console", args[1]);
+				sender.sendMessage(ChatColor.RED + "Added role! ");
 				return true;
 			}
 		}
 		Player player = (Player) sender;
-		if (args.length < 2) {
-			player.sendMessage(ChatColor.RED + "Please specify a user to add to staff!");
+		if (args.length == 0) {
+			sender.sendMessage(ChatColor.RED + "Please specify a role name!");
+			return true;
+		}
+		if (args.length == 1) {
+			sender.sendMessage(ChatColor.RED + "Please specify a pex group!");
+			return true;
+		}
+		if (args.length > 2) {
+			sender.sendMessage(ChatColor.RED + "Too many arugments!");
 			return true;
 		}
 		if (StaffModeCommand.roles.containsKey(args[1].toLowerCase())) {
 			player.sendMessage(ChatColor.RED + "This role already exists! ");
-		}
-		UUID staffmember = Bukkit.getPlayerExact(args[0]).getUniqueId();
-		if (staffmember == null) {
-			player.sendMessage(ChatColor.RED+"Player does not exist!");
+		}  else {
+			StaffModeCommand.MakeRole(args[0], StaffModeCommand.isStaff(player.getUniqueId()), args[1]);
+			player.sendMessage(ChatColor.RED + "Added role! ");
 			return true;
 		}
-		String rank = StaffModeCommand.isStaff(player.getUniqueId());
-		if (rank == null) {
-			player.sendMessage("You do not have permission to execute this command!");
-			return true;
-		}
-		if (StaffModeCommand.CanManage(rank.toLowerCase(), args[1].toLowerCase())) { // if other role isn't allowed
-			StaffModeCommand.MakeRole(args[0].toLowerCase(), rank.toLowerCase(), args[1]);
-			player.sendMessage(ChatColor.GREEN + "Added player to staff!");
-			return true;
-		} else {
-			player.sendMessage("You do not have permission to execute this command!");
-			return true;
-		}
+		return true;
+		
 	}
 }
