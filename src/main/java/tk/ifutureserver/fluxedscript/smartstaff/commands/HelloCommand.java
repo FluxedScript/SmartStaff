@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class HelloCommand implements CommandExecutor {
 

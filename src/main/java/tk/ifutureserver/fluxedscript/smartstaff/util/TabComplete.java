@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.util;
+package tk.ifutureserver.fluxedscript.smartstaff.util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-import tk.ifutureserver.smartstaff.Main;
-import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffModeCommand;
 public class TabComplete implements TabCompleter{
 	Main plugin;
     @Override

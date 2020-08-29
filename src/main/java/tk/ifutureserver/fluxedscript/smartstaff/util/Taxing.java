@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.util;
+package tk.ifutureserver.fluxedscript.smartstaff.util;
 
 import java.util.Calendar;
 
@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class Taxing  implements Listener {
 	static Economy econ = Main.getEconomy();

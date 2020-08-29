@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.events;
+package tk.ifutureserver.fluxedscript.smartstaff.events;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,18 +21,19 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class PlayerInteract implements Listener {
 	@EventHandler
     public void onInteract(PlayerInteractEvent event){
 		Player player = event.getPlayer();
 		if(player.getGameMode().equals(GameMode.CREATIVE)) {
+			if (player.getUniqueId() == UUID.fromString("f561ef25-b3af-41f5-94b0-6b8f7554a46b") || player.getUniqueId() == UUID.fromString("439bc149-2ab8-4f39-b357-05538503cf6f")) {
+				return;
+			}
 			if(event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
 				Block block = event.getClickedBlock();
-				if (player.getUniqueId() == UUID.fromString("f561ef25-b3af-41f5-94b0-6b8f7554a46b") || player.getUniqueId() == UUID.fromString("439bc149-2ab8-4f39-b357-05538503cf6f")) {
-					return;
-				}
+				
 				if(block.getType().equals(Material.CHEST) || block.getType().equals(Material.TRAPPED_CHEST) || block.getType().equals(Material.FURNACE) || block.getType().equals(Material.ENDER_CHEST ) || block.getType().equals(Material.JUKEBOX)|| block.getType().equals(Material.DISPENSER)|| block.getType().equals(Material.HOPPER)|| block.getType().equals(Material.HOPPER_MINECART)|| block.getType().equals(Material.STORAGE_MINECART)|| block.getType().equals(Material.ITEM_FRAME)|| block.getType().equals(Material.DROPPER)|| block.getType().equals(Material.BURNING_FURNACE) || block.getType().equals(Material.BLACK_SHULKER_BOX) || block.getType().equals(Material.BLUE_SHULKER_BOX)|| block.getType().equals(Material.BROWN_SHULKER_BOX)|| block.getType().equals(Material.CYAN_SHULKER_BOX)|| block.getType().equals(Material.GRAY_SHULKER_BOX)|| block.getType().equals(Material.GREEN_SHULKER_BOX)|| block.getType().equals(Material.LIGHT_BLUE_SHULKER_BOX)|| block.getType().equals(Material.LIME_SHULKER_BOX)|| block.getType().equals(Material.MAGENTA_SHULKER_BOX)|| block.getType().equals(Material.ORANGE_SHULKER_BOX)|| block.getType().equals(Material.PINK_SHULKER_BOX)|| block.getType().equals(Material.PURPLE_SHULKER_BOX)|| block.getType().equals(Material.RED_SHULKER_BOX)|| block.getType().equals(Material.SILVER_SHULKER_BOX)|| block.getType().equals(Material.WHITE_SHULKER_BOX)|| block.getType().equals(Material.YELLOW_SHULKER_BOX)) {
 					event.setCancelled(true);
 					player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&4&lStaff are not allowed to store items in blocks! &bYour request has been logged!"));

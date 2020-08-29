@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -18,7 +17,6 @@ import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
-import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -27,7 +25,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 
 import net.milkbowl.vault.permission.Permission;
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class StaffModeCommand implements CommandExecutor {
 	static HashMap<UUID, ArrayList<String>> userranks = new HashMap<UUID, ArrayList<String>>(); // PLAYER UUID | RP
@@ -64,7 +62,7 @@ public class StaffModeCommand implements CommandExecutor {
 			sender.sendMessage("You must be a player to use this!");
 			return true;
 		}
-		DecimalFormat df = new DecimalFormat("0.00");
+		//DecimalFormat df = new DecimalFormat("0.00");
 		String FinalRank = null; // Initialise the staff rank variable as null
 		Player player = (Player) sender; // Get player from sender to send messages
 		String[] groups = permissions.getPlayerGroups(player);// gets the groups the player is in
@@ -80,7 +78,7 @@ public class StaffModeCommand implements CommandExecutor {
 				
 				FinalRank = rolearray.get(usersroles.get(player.getUniqueId())); //Get role from uuid and get pex group from role.
 				for (String s : groups) {
-					System.out.print(s);
+					System.out.print("Removing role "+s+" for person going into staff mode");
 					permissions.playerRemoveGroup(null, player, s);
 					values.add(s);
 				}
@@ -100,15 +98,16 @@ public class StaffModeCommand implements CommandExecutor {
 					System.out.print("Removed "+s);
 					permissions.playerRemoveGroup(null, player, s);
 				}
+				
 				System.out.print(values);
 				player.setGameMode(GameMode.CREATIVE);
 				player.setGameMode(GameMode.SURVIVAL);
 				for (PotionEffect effect : player.getActivePotionEffects())
 			        player.removePotionEffect(effect.getType());
-				Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
-				Location currentloc = player.getLocation();
-				Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-1.0, 0);
-				player.teleport(oldloc);
+				//Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
+				//Location currentloc = player.getLocation();
+				//Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-1.0, 0);
+				//player.teleport(oldloc);
 				player.getEquipment().clear();
 				player.getInventory().clear();
 				
@@ -386,7 +385,7 @@ public class StaffModeCommand implements CommandExecutor {
 	public static void removeStaff(UUID idkey) { // Deletes staff from allowed
 		OfflinePlayer playeroffline = Bukkit.getOfflinePlayer(idkey);
 		if (playeroffline.isOnline() == true) { //if player is online
-			DecimalFormat df = new DecimalFormat("0.00");
+			//DecimalFormat df = new DecimalFormat("0.00");
 			Player player = playeroffline.getPlayer(); // Get player from sender to send messages
 			String[] groups = permissions.getPlayerGroups(player);// gets the groups the player is in
 			ArrayList<String> values = new ArrayList<String>(); // local storage for groups that are removed
@@ -400,15 +399,14 @@ public class StaffModeCommand implements CommandExecutor {
 				for (String s : groups) {
 					permissions.playerRemoveGroup(null, player, s);
 				}
-				System.out.print(values);
 				player.setGameMode(GameMode.CREATIVE);
 				player.setGameMode(GameMode.SURVIVAL);
 				for (PotionEffect effect : player.getActivePotionEffects())
 			        player.removePotionEffect(effect.getType());
-				Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
-				Location currentloc = player.getLocation();
-				Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-2.0, 0);
-				player.teleport(oldloc);
+				//Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
+				//Location currentloc = player.getLocation();
+				//Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-2.0, 0);
+				//player.teleport(oldloc);
 				player.getEquipment().clear();
 				player.getInventory().clear();
 				
@@ -458,7 +456,6 @@ public class StaffModeCommand implements CommandExecutor {
 				for (Entry<UUID, ArrayList<String>> entry : userranks.entrySet()) { // get the group they had before
 																					// they went into staff
 					if (entry.getKey().equals(player.getUniqueId())) { // if player id == hashmap id
-						System.out.print("executes222");
 						values = entry.getValue();
 						ArrayList<String> newvalues = values;
 						int count = 0;

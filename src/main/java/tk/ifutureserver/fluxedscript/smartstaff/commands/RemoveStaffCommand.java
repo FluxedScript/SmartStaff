@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class RemoveStaffCommand implements CommandExecutor {
 
@@ -23,7 +23,6 @@ public class RemoveStaffCommand implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof Player)) {
-			System.out.print("Executes");
 			if (args.length < 1) {
 				sender.sendMessage(ChatColor.RED + "Please specify a user to remove from staff!");
 				return true;
@@ -38,7 +37,6 @@ public class RemoveStaffCommand implements CommandExecutor {
 			StaffModeCommand.removeStaff(staffmember);
 			return true;
 		}
-		System.out.print("Executes2");
 		Player player = (Player) sender;
 		if (args.length < 1) {
 			player.sendMessage(ChatColor.RED + "Please specify a user to remove from staff!");

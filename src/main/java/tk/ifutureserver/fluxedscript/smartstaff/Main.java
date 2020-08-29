@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff;
+package tk.ifutureserver.fluxedscript.smartstaff;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,22 +20,22 @@ import com.sun.net.httpserver.HttpServer;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
-import tk.ifutureserver.smartstaff.commands.AddPermCommand;
-import tk.ifutureserver.smartstaff.commands.AddStaffCommand;
-import tk.ifutureserver.smartstaff.commands.CreateRoleCommand;
-import tk.ifutureserver.smartstaff.commands.HelloCommand;
-import tk.ifutureserver.smartstaff.commands.PlayTimeCommand;
-import tk.ifutureserver.smartstaff.commands.RemovePermCommand;
-import tk.ifutureserver.smartstaff.commands.RemoveRoleCommand;
-import tk.ifutureserver.smartstaff.commands.RemoveStaffCommand;
-import tk.ifutureserver.smartstaff.commands.StaffInfoCommand;
-import tk.ifutureserver.smartstaff.commands.StaffModeCommand;
-import tk.ifutureserver.smartstaff.commands.TaxUser;
-import tk.ifutureserver.smartstaff.commands.UpdateRankCommand;
-import tk.ifutureserver.smartstaff.commands.ViewRolesCommand;
-import tk.ifutureserver.smartstaff.events.PlayerInteract;
-import tk.ifutureserver.smartstaff.events.PlayerJoin;
-import tk.ifutureserver.smartstaff.util.Taxing;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.AddPermCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.AddStaffCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.CreateRoleCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.HelloCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.PlayTimeCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.RemovePermCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.RemoveRoleCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.RemoveStaffCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffInfoCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffModeCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.TaxUser;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.UpdateRankCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.ViewRolesCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
+import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
+import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
 
 public class Main extends JavaPlugin implements Listener {
 	public static  Logger log = Logger.getLogger("Minecraft");

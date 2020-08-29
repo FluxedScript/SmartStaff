@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class TaxUser implements CommandExecutor {
 	static Economy econ = Main.getEconomy();

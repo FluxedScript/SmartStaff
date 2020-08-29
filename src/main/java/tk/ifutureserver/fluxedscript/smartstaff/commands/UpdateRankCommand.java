@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class UpdateRankCommand implements CommandExecutor {
 

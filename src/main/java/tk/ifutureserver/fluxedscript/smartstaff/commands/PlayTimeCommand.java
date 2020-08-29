@@ -1,4 +1,4 @@
-package tk.ifutureserver.smartstaff.commands;
+package tk.ifutureserver.fluxedscript.smartstaff.commands;
 
 import java.io.File;
 import java.io.FileReader;
@@ -21,7 +21,7 @@ import org.bukkit.entity.Player;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import tk.ifutureserver.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 public class PlayTimeCommand implements CommandExecutor {
 	static Map<Long, String> users = new TreeMap<Long, String>(Collections.reverseOrder());
