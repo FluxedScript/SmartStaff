@@ -3,10 +3,82 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="">
+    <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="Changed to intelij">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/TK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_16_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/CommandInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/StaffData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/StaffMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/TabCompletion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/perms/AddPerm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/perms/RemovePerm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/CreateRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/DeleteRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/UpdateRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/ViewRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/staff/AddStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/staff/RemoveStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/staff/getStaff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/util/Numbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/ApiHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/cmdExecute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartstaff.iml" beforeDir="false" afterPath="$PROJECT_DIR$/smartstaff.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/AddPermCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/AddStaffCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/CreateRoleCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/HelloCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/misc/HelloCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/PlayTimeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/playtime/PlayTimeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/RemovePermCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/RemoveRoleCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/RemoveStaffCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/StaffInfoCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/StaffModeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/TaxUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/economy/TaxUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/UpdateRankCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/ViewRolesCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/events/PlayerJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/events/PlayerJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/util/TabComplete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/util/TabComplete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" afterDir="false" />
@@ -15,6 +87,15 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,17 +108,26 @@
     </option>
   </component>
   <component name="ProjectId" id="1gmJwVgpbSlOYsBa5yu4g5DAuoi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RPGChat" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,44 +138,128 @@
       <option name="presentableId" value="Default" />
       <updated>1598714074827</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed to intelij">
+      <created>1598714729910</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598714729910</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed to intelij">
+      <created>1598714792624</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598714792624</updated>
+    </task>
+    <task id="LOCAL-00003" summary="deleted 2 files">
+      <created>1598715416124</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598715416124</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed to intelij" />
+    <MESSAGE value="deleted 2 files" />
+    <MESSAGE value="Tab complete and sub commands to StaffMode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tab complete and sub commands to StaffMode" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1598723170048">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598723170048" />
     <state x="249" y="0" key="#Project_Structure" timestamp="1598714441627">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714441627" />
+    <state x="561" y="271" key="#Scopes" timestamp="1598715814042">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="561" y="271" key="#Scopes/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598715814042" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1599057980237">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599057980237" />
     <state x="490" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598714277394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="490" y="101" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714277394" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1598714654658">
+    <state x="596" y="103" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1598779981311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714654658" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1598714410578">
+    <state x="596" y="103" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598779981311" />
+    <state x="350" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1599058055452">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714410578" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1598714410578">
+    <state x="350" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599058055452" />
+    <state x="491" y="281" width="555" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1598775366512">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714410578" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1598714410577">
+    <state x="491" y="281" width="555" height="267" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598775366512" />
+    <state x="498" y="257" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598779853837">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714410577" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1598714410578">
+    <state x="498" y="257" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598779853837" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1599060662468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714410578" />
-    <state x="278" y="57" key="SettingsEditor" timestamp="1598714660050">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599060662468" />
+    <state width="839" height="161" key="GridCell.Tab.0.bottom" timestamp="1599068196632">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="278" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714660050" />
+    <state width="839" height="161" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599068196632" />
+    <state width="839" height="161" key="GridCell.Tab.0.center" timestamp="1599068196632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="839" height="161" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599068196632" />
+    <state width="839" height="161" key="GridCell.Tab.0.left" timestamp="1599068196632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="839" height="161" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599068196632" />
+    <state width="839" height="161" key="GridCell.Tab.0.right" timestamp="1599068196632">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="839" height="161" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599068196632" />
+    <state x="278" y="57" key="SettingsEditor" timestamp="1598725410767">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="278" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598725410767" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1598715500250">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598715500250" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598715443304">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598715443304" />
     <state x="560" y="314" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598714309611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="560" y="314" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598714309611" />
+    <state x="209" y="33" key="new project wizard" timestamp="1598806111388">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1598806111388" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1599056691915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1599056691915" />
   </component>
 </project>

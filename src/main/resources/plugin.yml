@@ -21,39 +21,3 @@ commands:
     description: Tax all players
     usage: /taxall
     aliases: [taxday,collecttaxes]
-  stafflist:
-    description: View all staff
-    usage: /stafflist
-    aliases: [sl,liststaff]
-  addstaff:
-    description: Add a new staff member
-    usage: /addstaff
-    aliases: [invitestaff]
-  updatestaff:
-    description: Update staff member role
-    usage: /updatestaff
-    aliases: [ustaff,updstaff,upstaff]
-  removestaff:
-    description: Removes staff member
-    usage: /removestaff
-    aliases: [rstaff,remstaff,firestaff]
-  viewroles:
-    description: Staff mode roles
-    usage: /viewroles
-    aliases: [rolelist,staffmoderlist,sml]
-  removerole:
-    description: Staff mode remove role
-    usage: /removerole
-    aliases: [rmvrole,rmrole,delrole]
-  addrole:
-    description: Staff mode add role
-    usage: /addrole
-    aliases: [adrole,createrole,makerole]
-  permremove:
-    description: Staff mode remove perm
-    usage: /permremove
-    aliases: [removeperm,smpermremove]
-  permadd:
-    description: Staff mode add perm
-    usage: /permadd
-    aliases: [addperm]

@@ -1,5 +1,40 @@
-test: true
-RMTpass: "LinuxRulesDonald" #Remote access passwor
-#Permission plugin group ; permission you want to use
-taxes: 6.5 #Percentage tax to execute
+# ----------------------------------
+# -
+#       SmartStaff
+# -
+#       By: FluxedScript
+# -
+# ----------------------------------
+### API
+
+port: 4000 #Port for the API/Portable command executor
+RMTpass: "LinuxRulesDonald123213123" #Remote access password
+APIpass: "LinuxRulesDonald123213123" #If you want to give API permissions to developers but not give them console give them this
+
+BlockedCmds: ##commands you do not want the Remote user to use
+  - kill
+
+### IPS
+
+OnlyAllowedIps: false #Block all other ips except the ones in AllowedIPS
+AllowedIPS:
+  - 127.0.0.1 #anything on the same ip as the plugin such as another plugin
+
+BlockedIPS: #Block malicious users/services from using it
+  - 128.0.0.1 #Some random ip
+
+
+# Economy
+taxes: 6.5 #Percentage tax to execute on command and automatic
+exec_tax: false #Allow auto taxing
+time: 0 #0-23 hours 0 for midnight, 23 for 11pm
+
+#Staff Mode
+StaffMode: true #Enable staffmode features
 DefaultRank: "Citizen" #What rank do you want everyone to have
+PreventStaffRoles: true #Stops staff roles being used when not in staff mode
+
+#GlobalBlacklist
+AlertStaffOnHackerJoin: true #if someone exists alert staff
+BanHackerOnJoin: true #bans them on join
+PublicBanAndKick: false #displays a hacker to automatically be kicked on server join

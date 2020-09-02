@@ -1,49 +1,55 @@
 package tk.ifutureserver.fluxedscript.smartstaff;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.util.logging.Logger;
-
+import com.sun.net.httpserver.HttpServer;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
-
-import net.milkbowl.vault.chat.Chat;
-import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.permission.Permission;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.AddPermCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.AddStaffCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.CreateRoleCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.HelloCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.PlayTimeCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.RemovePermCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.RemoveRoleCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.RemoveStaffCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffInfoCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffModeCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.TaxUser;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.UpdateRankCommand;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.ViewRolesCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.economy.TaxUser;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.misc.HelloCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.playtime.PlayTimeCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.CommandHandler;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.StaffData;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.StaffMode;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.TabCompletion;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.perms.AddPerm;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.perms.RemovePerm;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.CreateRole;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.DeleteRole;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.UpdateRole;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.ViewRole;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.AddStaff;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.RemoveStaff;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.getStaff;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.HomePage;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.ApiHome;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.cmdExecute;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
+@SuppressWarnings("SpellCheckingInspection")
 public class Main extends JavaPlugin implements Listener {
 	public static  Logger log = Logger.getLogger("Minecraft");
 	private static Permission perms = null;
-    private static Chat chat = null;
     private static Economy econ = null;
     private static float taxamount = 1;
     public static String oldpassword = null;
+    public static String oldapipassword = null;
     public static String defaultrank = null;
     public static File DataFolder = null;
     HttpServer server = null;
@@ -54,16 +60,26 @@ public class Main extends JavaPlugin implements Listener {
 	@Override
     public void onEnable() {
 		instance = this;
+
 		if (!setupPermissions() ) {
             log.severe("SmartStaff - Disabled due to no Vault dependency found!");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
 		setupEconomy();
-		StaffModeCommand.LoadData(this.getDataFolder());
+		StaffData.LoadData(this.getDataFolder());
+
 		//setupChat();
 		getConfig().options().copyDefaults(true);
 		saveConfig();
+        if (getConfig().get("RMTpass").equals("LinuxRulesDonald123213123")){
+            char[] possibleCharacters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?").toCharArray();
+            String randomPass = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
+            String randomPass2 = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
+            getConfig().set("RMTpass",randomPass);
+            getConfig().set("APIpass",randomPass2);
+            saveConfig();
+        }
 		taxamount = (float)getConfig().getDouble("taxes");
 		defaultrank = getConfig().getString("DefaultRank");
 		DataFolder = getDataFolder();
@@ -71,41 +87,34 @@ public class Main extends JavaPlugin implements Listener {
         new HelloCommand(this);
         new TaxUser(this);
         new PlayTimeCommand(this);
-        new StaffModeCommand(this);
-        new StaffInfoCommand(this);
-        new AddStaffCommand(this);
-        new RemoveStaffCommand(this);
-        new RemoveRoleCommand(this);
-        new CreateRoleCommand(this);
-        new UpdateRankCommand(this);
-        new ViewRolesCommand(this);
-        new AddPermCommand(this);
-        new RemovePermCommand(this);
-        try {
-			server = HttpServer.create(new InetSocketAddress(4000), 0);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-        oldpassword = (String) getConfig().get("RMTpass");
-        if (server != null) {
-        	server.createContext("/", new MyHandler());
-    		server.setExecutor(null);
-    		server.start();
-    		System.out.print("Server on 4000");
-        } else {
-        	getLogger().warning("SmartStaff couldn't launch server on port 4000");
-        }
+
+        this.registerCommands();
+        StartWeb(); //Start web server
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
         Taxing.taxing();
 	}
-	/*private boolean setupChat() {
-        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
-        System.out.print(rsp);
-        chat = rsp.getProvider();
-        return chat != null;
-    }*/
-    
+    private void StartWeb(){
+        int port = 4000;
+        try {
+            server = HttpServer.create(new InetSocketAddress(port), 0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.print(e.getCause());
+        }
+        oldpassword = (String) getConfig().get("RMTpass");
+        oldapipassword = (String) getConfig().get("APIpass");
+        if (server != null) {
+            server.createContext("/", new HomePage());
+            server.createContext("/execute", new cmdExecute());
+            server.createContext("/api/", new ApiHome());
+            server.setExecutor(null);
+            server.start();
+            System.out.print("Server on "+port);
+        } else {
+            getLogger().warning("SmartStaff couldn't launch server on port "+port);
+        }
+    }
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         perms = rsp.getProvider();
@@ -138,72 +147,53 @@ public class Main extends JavaPlugin implements Listener {
     public static Economy getEconomy() {
         return econ;
     }
-    
-    public static Chat getChat() {
-        return chat;
-    }
+
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.RED+"SmartStaff is offline!");
+        getLogger().info(ChatColor.RED + "SmartStaff is offline!");
         Bukkit.broadcastMessage("SmartStaff - Saving data");
-        StaffModeCommand.SaveData(this.getDataFolder());
+        StaffData.SaveData(this.getDataFolder());
         Bukkit.broadcastMessage("SmartStaff - Saved data");
         server.stop(0);
     }
-    static class MyHandler implements HttpHandler {
-        @Override
-        public void handle(HttpExchange t) throws IOException {
-        	String cmd = null;
-        	String checkpassword = null;
-            String response = t.getRequestURI().getQuery(); //if http://localhost:4000/?name=john&password=hi
-            if(t.getRequestURI().getQuery() != null) {
-            	System.out.print(response); //name=john&password=hi 
-            	String[] parts = response.split("&");
-            	for (String s: parts) {
-	    			String mainname = s.split("=")[0];
-	    			String attribute = s.split("=")[1];
-	    			if (mainname.equalsIgnoreCase("password")) {
-	    				checkpassword = attribute;
-	    				System.out.print("password: "+attribute);
-	    			} 
-	    			if(mainname.equalsIgnoreCase("cmd") || mainname.equalsIgnoreCase("command") || mainname.equalsIgnoreCase("run")) {
-	    				cmd = attribute;
-	    				System.out.print("CMD: "+attribute);
-	    			}
-	    		}
-            }else {
-            	return;
-            }
-            if (oldpassword.equals(checkpassword)) {
-            	;
-            }else {
-            	String response2 = "Invalid password";
-                t.sendResponseHeaders(401, response2.length());
-                OutputStream os = t.getResponseBody();
-                os.write(response2.getBytes());
-                os.close();
-                return;
-            }
-            if(cmd == null) {
-            	System.out.print("No command");
-            	String response2 = "No command specified";
-                t.sendResponseHeaders(400, response2.length());
-                OutputStream os = t.getResponseBody();
-                os.write(response2.getBytes());
-                os.close();
-                return;
-            }
-            String response2 = "None";
-            ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
-            if(Bukkit.dispatchCommand(console, cmd)) {
-            	response2 = "Successfully executed command"; 
-            } else {
-            	response2 = "Could not execute command"; 
-            }
-            t.sendResponseHeaders(200, response2.length());
-            OutputStream os = t.getResponseBody();
-            os.write(response2.getBytes());
-            os.close();
-        }
+
+    //Because there may be LOTS of commands, we are going to make a separate method to keep
+    //the onEnable() nice and clean.
+    public void registerCommands() {
+        CommandHandler handler = new CommandHandler();
+
+        //Registers the command /staffmode which has no arguments.
+        handler.register("staffmode", new StaffMode());
+
+        //Registers the command /staffmode args based on args[0] (args)
+        handler.register("liststaff", new getStaff());
+        handler.register("viewstaff", new getStaff());
+
+        handler.register("addstaff", new AddStaff());
+        handler.register("hirestaff", new AddStaff());
+        handler.register("hire", new AddStaff());
+
+        handler.register("removestaff", new RemoveStaff());
+        handler.register("firestaff", new RemoveStaff());
+        handler.register("fire", new RemoveStaff());
+
+
+        handler.register("addperm", new AddPerm());
+        handler.register("permadd", new AddPerm());
+
+        handler.register("removeperm", new RemovePerm());
+        handler.register("delperm", new RemovePerm());
+        handler.register("permremove", new RemovePerm());
+
+
+        handler.register("createrole",new CreateRole());
+
+        handler.register("deleterole",new DeleteRole());
+        handler.register("delrole",new DeleteRole());
+
+        handler.register("updaterole",new UpdateRole());
+        handler.register("viewroles",new ViewRole());
+        getCommand("staffmode").setExecutor(handler);
+        getCommand("staffmode").setTabCompleter(new TabCompletion());
     }
 }

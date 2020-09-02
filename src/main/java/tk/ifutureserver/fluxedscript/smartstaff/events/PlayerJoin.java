@@ -6,16 +6,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
-
 import tk.ifutureserver.fluxedscript.smartstaff.Main;
-import tk.ifutureserver.fluxedscript.smartstaff.commands.StaffModeCommand;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.StaffData;
 
 public class PlayerJoin implements Listener {
 	@SuppressWarnings("unused")
 	private Main plugin;
 	@EventHandler
 	private void playerJoin(PlayerJoinEvent e) {
-		if (StaffModeCommand.befired(e.getPlayer().getUniqueId())) {
+		if (StaffData.befired(e.getPlayer().getUniqueId())) {
 			//DecimalFormat df = new DecimalFormat("0.00");
 			Player player = e.getPlayer();
 			player.setGameMode(GameMode.CREATIVE);
