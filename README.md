@@ -2,7 +2,7 @@
 
 The plugin owners need their staff to use. Open source, so you know what we used to make things happen.
 
-##Features we offer
+## Features we offer
 * Staff Mode - Prevents abuse of permissions
 * Logging - View everything you need to know about your server
 * Web server API:
@@ -15,9 +15,9 @@ The plugin owners need their staff to use. Open source, so you know what we used
     - Tax command
     - Statistics on player income
 
-##Supported versions
+## Supported versions
 
 * 1.12.2
-
+* 1.13.2
 Soon to support latest versions from 1.8.8-> 1.16.2
 

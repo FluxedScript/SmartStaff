@@ -68,7 +68,7 @@ public class Main extends JavaPlugin implements Listener {
         }
 		setupEconomy();
 		StaffData.LoadData(this.getDataFolder());
-
+        System.out.print(Bukkit.getServer().getClass().getPackage().getName());
 		//setupChat();
 		getConfig().options().copyDefaults(true);
 		saveConfig();
@@ -167,6 +167,7 @@ public class Main extends JavaPlugin implements Listener {
 
         //Registers the command /staffmode args based on args[0] (args)
         handler.register("liststaff", new getStaff());
+        handler.register("stafflist", new getStaff());
         handler.register("viewstaff", new getStaff());
 
         handler.register("addstaff", new AddStaff());

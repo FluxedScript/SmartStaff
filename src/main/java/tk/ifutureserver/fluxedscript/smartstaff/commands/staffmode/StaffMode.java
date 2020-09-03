@@ -24,6 +24,7 @@ public class StaffMode implements CommandInterface {
             sender.sendMessage("You must be a player to use this!");
             return true;
         }
+        System.out.print("Executed");
         //DecimalFormat df = new DecimalFormat("0.00");
         String FinalRank; // Initialise the staff rank variable as null
         Player player = (Player) sender; // Get player from a sender to send messages
@@ -40,11 +41,9 @@ public class StaffMode implements CommandInterface {
 
                 FinalRank = StaffData.rolearray.get(StaffData.usersroles.get(player.getUniqueId())); //Get role from uuid and get pex group from role.
                 for (String s : groups) {
-                    System.out.print("Removing role "+s+" for person going into staff mode");
                     permissions.playerRemoveGroup(null, player, s);
                     values.add(s);
                 }
-                System.out.print(FinalRank);
                 permissions.playerAddGroup(null, player, FinalRank);
                 StaffData.userranks.put(player.getUniqueId(), values); // puts the rp roles into memory for later
                 StaffData.activeusers.add(player.getUniqueId()); // adds the player into the currently active staff members
@@ -52,12 +51,11 @@ public class StaffMode implements CommandInterface {
                 // from which would be an rp group
                 Bukkit.getServer().broadcastMessage(
                         ChatColor.translateAlternateColorCodes('&', player.getName() + " &cis now in &4&lSTAFF MODE"));
-                return true;// broadcasts to the server
+                return false;// broadcasts to the server
             } else if (StaffData.activeusers.contains(player.getUniqueId())) { // if player is in staff mode
 
                 //IN STAFF MODE GOING TO RP MODE
                 for (String s : groups) {
-                    System.out.print("Removed "+s);
                     permissions.playerRemoveGroup(null, player, s);
                 }
 
@@ -102,14 +100,14 @@ public class StaffMode implements CommandInterface {
                 StaffData.userranks.remove(player.getUniqueId()); // Remove rp role from storage to save on ram usage
                 StaffData.activeusers.remove(player.getUniqueId()); // Remove from online users
                 Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', player.getName() + " &cis now in &b&lRP MODE"));
-                return true;
+                return false;
 
             }
         }else {
             player.sendMessage(ChatColor.DARK_RED+"You do not have permission to execute this command!");
-            return true;
+            return false;
         }
 
-        return true;
+        return false;
     }
 }

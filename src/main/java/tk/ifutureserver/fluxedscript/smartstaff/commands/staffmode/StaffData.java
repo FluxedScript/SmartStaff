@@ -274,13 +274,9 @@ public class StaffData {
     }
     public static ArrayList<String> getAllRanks() {
         ArrayList<String> values = new ArrayList<>();
-        System.out.print("executes!");
-        System.out.print(rolearray);
         for (Map.Entry<String, String> entry : rolearray.entrySet()) {
             String rolename = entry.getKey();
             String pexrank = entry.getValue();
-            System.out.print(rolename);
-            System.out.print(pexrank);
             ArrayList<String> temproles = roles.get(rolename);
             if (temproles.contains("ADMINISTRATOR")) {
                 values.add(ChatColor.DARK_RED+""+rolename + " : "+pexrank);
@@ -291,9 +287,7 @@ public class StaffData {
             }else {
                 values.add(ChatColor.GRAY+""+rolename + " : "+pexrank);
             }
-            System.out.print(values);
         }
-        System.out.print(values);
         if (values.isEmpty()) {
             return null;
         }

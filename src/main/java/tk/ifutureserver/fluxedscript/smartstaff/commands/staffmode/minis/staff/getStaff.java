@@ -35,7 +35,7 @@ public class getStaff implements CommandInterface {
             String rank = entry.getValue();
             leaderboard.add(ChatColor.GREEN + "" + name + " => " + rank);
             if (count == (12 * pagenum)) {
-                leaderboard.add(ChatColor.GOLD + "Type " + ChatColor.RED + "/staffmode liststaff " + (pagenum + 1) + ChatColor.GOLD
+                leaderboard.add(ChatColor.GOLD + "Type " + ChatColor.RED + "/staffmode stafflist " + (pagenum + 1) + ChatColor.GOLD
                         + " to read the next page!");
                 break;
             } else if (count == (12 * (pagenum - 1))) {

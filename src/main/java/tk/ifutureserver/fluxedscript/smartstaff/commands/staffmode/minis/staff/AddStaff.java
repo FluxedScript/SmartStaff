@@ -28,7 +28,7 @@ public class AddStaff implements CommandInterface {
                 sender.sendMessage(ChatColor.GREEN + "Added player to staff!");
             } else {
                 sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-                        + "/smartstaff addstaff <name> <role>");
+                        + "/staffmode addstaff <name> <role>");
             }
             return false;
         }
@@ -39,7 +39,7 @@ public class AddStaff implements CommandInterface {
         }
         if (!(StaffData.roles.containsKey(args[2].toLowerCase()))) {
             player.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-                    + "/smartstaff addstaff <name> <role>");
+                    + "/staffmode addstaff <name> <role>");
             return false;
         }
         UUID staffmember = Bukkit.getPlayerExact(args[1]).getUniqueId();

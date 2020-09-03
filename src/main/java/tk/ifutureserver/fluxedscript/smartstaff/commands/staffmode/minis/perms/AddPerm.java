@@ -23,7 +23,7 @@ public class AddPerm implements CommandInterface {
                 sender.sendMessage(ChatColor.GREEN + "Added "+args[2]+" to "+args[1]);
             } else {
                 sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-                        + "/smartstaff addperm <role> <perm>");
+                        + "/staffmode addperm <role> <perm>");
             }
             return false;
 

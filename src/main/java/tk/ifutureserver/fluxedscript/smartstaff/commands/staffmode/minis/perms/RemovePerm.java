@@ -24,7 +24,7 @@ public class RemovePerm implements CommandInterface {
                 return true;
             } else {
                 sender.sendMessage(ChatColor.RED + "Please specify a correct role name! " + ChatColor.GOLD
-                        + "/permremove <role> <perm>");
+                        + "/staffmode removeperm <role> <perm>");
                 return true;
             }
 
