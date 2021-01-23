@@ -33,7 +33,6 @@ import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.g
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
-import tk.ifutureserver.fluxedscript.smartstaff.webpanel.HomePage;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.IndexPage;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.ApiHome;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.cmdExecute;
@@ -85,7 +84,7 @@ public class Main extends JavaPlugin implements Listener {
             }
             try {
                 FileUtils.copyInputStreamToFile(this.getResource("html/index.html"), new File(Bukkit.getServer().getPluginManager().getPlugin("SmartStaff").getDataFolder(),"html/index.html"));
-                FileUtils.copyInputStreamToFile(this.getResource("html/index.html"), new File(Bukkit.getServer().getPluginManager().getPlugin("SmartStaff").getDataFolder(),"html/index.html"));
+                FileUtils.copyInputStreamToFile(this.getResource("html/errorpages/404.html"), new File(Bukkit.getServer().getPluginManager().getPlugin("SmartStaff").getDataFolder(), "html/errorpages/404.html"));
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -171,7 +170,7 @@ public class Main extends JavaPlugin implements Listener {
         oldapipassword = (String) Main.config().get("APIpass");
         if (server != null) {
             server.createContext("/", new IndexPage());
-            server.createContext("/execute", new cmdExecute());
+            server.createContext("/execute/", new cmdExecute());
             server.createContext("/api/", new ApiHome());
             //server.createContext("/static", new StaticFileServer());
             server.setExecutor(null);
