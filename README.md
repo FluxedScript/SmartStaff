@@ -19,5 +19,6 @@ The plugin owners need their staff to use. Open source, so you know what we used
 
 * 1.12.2
 * 1.13.2
+
 Soon to support latest versions from 1.8.8-> 1.16.2
 

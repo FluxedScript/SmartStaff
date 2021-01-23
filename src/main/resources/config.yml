@@ -29,12 +29,20 @@ taxes: 6.5 #Percentage tax to execute on command and automatic
 exec_tax: false #Allow auto taxing
 time: 0 #0-23 hours 0 for midnight, 23 for 11pm
 
-#Staff Mode
+# Staff Mode
 StaffMode: true #Enable staffmode features
 DefaultRank: "Citizen" #What rank do you want everyone to have
 PreventStaffRoles: true #Stops staff roles being used when not in staff mode
 
-#GlobalBlacklist
+# GlobalBlacklist
 AlertStaffOnHackerJoin: true #if someone exists alert staff
 BanHackerOnJoin: true #bans them on join
 PublicBanAndKick: false #displays a hacker to automatically be kicked on server join
+
+# Database
+
+host: 127.0.0.1 #ip/domain for the mysql database
+mysqlport: 3306
+username: root
+password: password123 #hopefully more secure than this
+database: smartstaff

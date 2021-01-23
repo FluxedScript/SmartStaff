@@ -130,14 +130,15 @@ public class PlayTimeCommand implements CommandExecutor {
 					leaderboard.add(ChatColor.GREEN + "" + count + ". " + value + ", " + getShortTime(key));
 				}
 				if (count == (12 * pagenum)) {
+					leaderboard.add(ChatColor.GOLD + "Type " + ChatColor.RED + "/playtime top " + (pagenum + 1) + ChatColor.GOLD
+							+ " to read the next page!");
 					break;
 				} else if (count == (12 * (pagenum - 1))) {
 					leaderboard.removeAll(leaderboard);
 					leaderboard.add(e);
 				}
 			}
-			leaderboard.add(ChatColor.GOLD + "Type " + ChatColor.RED + "/playtime top " + (pagenum + 1) + ChatColor.GOLD
-					+ " to read the next page!");
+
 			return leaderboard;
 		} else {
 			return null;

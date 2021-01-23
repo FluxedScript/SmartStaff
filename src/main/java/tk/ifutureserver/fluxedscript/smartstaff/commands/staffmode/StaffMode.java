@@ -9,22 +9,22 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import tk.ifutureserver.fluxedscript.smartstaff.Main;
+import tk.ifutureserver.fluxedscript.smartstaff.util.LangSupport;
 
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.UUID;
 
 public class StaffMode implements CommandInterface {
+    Main plugin;
     static Permission permissions = Main.getPermissions();
     static String defaultrank = Main.getDefaultRank();
 
-    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (!(sender instanceof Player)) { // If user is not a player stop it from happening.
             sender.sendMessage("You must be a player to use this!");
             return true;
         }
-        System.out.print("Executed");
         //DecimalFormat df = new DecimalFormat("0.00");
         String FinalRank; // Initialise the staff rank variable as null
         Player player = (Player) sender; // Get player from a sender to send messages
@@ -50,7 +50,7 @@ public class StaffMode implements CommandInterface {
                 // save the group to a list with the player uuid then the group they got removed
                 // from which would be an rp group
                 Bukkit.getServer().broadcastMessage(
-                        ChatColor.translateAlternateColorCodes('&', player.getName() + " &cis now in &4&lSTAFF MODE"));
+                        ChatColor.translateAlternateColorCodes('&', LangSupport.getStaffModeEnterMsg().replace("%player%",player.getName())));
                 return false;// broadcasts to the server
             } else if (StaffData.activeusers.contains(player.getUniqueId())) { // if player is in staff mode
 
@@ -81,7 +81,7 @@ public class StaffMode implements CommandInterface {
                         for (String usergroupi : newvalues) {
 
                             if (!(usergroupi.equalsIgnoreCase(defaultrank))) { // Checks if first value is default
-                                if (!(StaffData.rolearray.containsValue(usergroupi))){
+                                if (!(StaffData.rolearray.containsValue(usergroupi)) && !(StaffData.rolearray.containsValue(usergroupi.toLowerCase()))){
                                     count += 1;
                                     permissions.playerAddGroup(null, player, usergroupi); // adds each rp role back but
                                     // avoids the default unless no
@@ -99,7 +99,7 @@ public class StaffMode implements CommandInterface {
                 }
                 StaffData.userranks.remove(player.getUniqueId()); // Remove rp role from storage to save on ram usage
                 StaffData.activeusers.remove(player.getUniqueId()); // Remove from online users
-                Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', player.getName() + " &cis now in &b&lRP MODE"));
+                Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', LangSupport.getStaffModeLeaveMsg().replace("%player%",player.getName())));
                 return false;
 
             }

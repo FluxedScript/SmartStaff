@@ -1,2 +1,4 @@
-HackerBan: "I'm sorry you exist on an anti raid database for {reason}. Please appeal at https://discord.gg/UG5vD9d"
+HackerBan: "I'm sorry you exist on an anti raid database for %reason%. Please appeal at https://discord.gg/UG5vD9d"
 prefix: "&c[&4SmartStaff&c]&f≫&r "
+StaffMode: "%player% &cis now in &4&lSTAFF MODE"
+RpMode: "%player% &cis now in &b&lRP MODE"

@@ -274,6 +274,7 @@ public class StaffData {
     }
     public static ArrayList<String> getAllRanks() {
         ArrayList<String> values = new ArrayList<>();
+        values.add(ChatColor.GOLD+"System rank : Permissions group");
         for (Map.Entry<String, String> entry : rolearray.entrySet()) {
             String rolename = entry.getKey();
             String pexrank = entry.getValue();
