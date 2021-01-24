@@ -10,8 +10,9 @@ import tk.ifutureserver.fluxedscript.smartstaff.Main;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.StaffData;
 
 public class PlayerJoin implements Listener {
-	@SuppressWarnings("unused")
+
 	private Main plugin;
+
 	@EventHandler
 	private void playerJoin(PlayerJoinEvent e) {
 		if (StaffData.befired(e.getPlayer().getUniqueId())) {

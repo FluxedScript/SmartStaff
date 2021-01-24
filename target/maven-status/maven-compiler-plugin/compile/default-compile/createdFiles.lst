@@ -29,4 +29,5 @@ tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\ApiHome.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\perms\AddPerm.class
 tk\ifutureserver\fluxedscript\smartstaff\events\BlockPlace.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\ViewRole.class
+tk\ifutureserver\fluxedscript\smartstaff\events\ChestOpen.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\TabCompletion.class

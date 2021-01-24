@@ -184,6 +184,14 @@ public class StaffData {
             return null;
         }
     }
+    public static boolean isCurrentStaff(UUID idkey) {
+        if (allowedusers.contains(idkey)) {
+            return activeusers.contains(idkey); // Returns the role
+        } else {
+            return false;
+        }
+
+    }
     public static boolean MakeRole(String Rank,String senderrank, String pexrank) {
         if(!(roles.get(senderrank).contains("MANAGE_ROLES") || roles.get(senderrank).contains("ADMINISTRATOR") || roles.get(senderrank).contains("MANGE_MEMBERS"))) {
             return false; //So if they don't have the permissions to do it

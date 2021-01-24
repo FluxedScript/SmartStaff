@@ -31,6 +31,7 @@ import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.A
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.Help;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.RemoveStaff;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.getStaff;
+import tk.ifutureserver.fluxedscript.smartstaff.events.ChestOpen;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
@@ -118,6 +119,7 @@ public class Main extends JavaPlugin implements Listener {
         Server(); //Start web server
         this.getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        this.getServer().getPluginManager().registerEvents(new ChestOpen(), this);
         Taxing.taxing();
     }
 

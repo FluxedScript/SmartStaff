@@ -12,7 +12,7 @@ commands:
     description: Staff mode
     usage: /staffmode
     permission: ss.use
-    aliases: [staff,sm,rpmode]
+    aliases: [sm]
   playtime:
     description: Player time
     usage: /playtime
@@ -20,4 +20,4 @@ commands:
   taxall:
     description: Tax all players
     usage: /taxall
-    aliases: [taxday,collecttaxes]
+    aliases: [collecttaxes]
