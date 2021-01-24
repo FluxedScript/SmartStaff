@@ -19,6 +19,7 @@ public class TabCompletion implements TabCompleter {
         list.add("createrole");
         list.add("addperm");
         list.add("delperm");
+        list.add("help");
 
         ArrayList<String> newlist = new ArrayList<>();
         for (String scmd : list){

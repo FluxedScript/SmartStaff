@@ -9,6 +9,7 @@ tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\perms\RemovePe
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\CreateRole.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\cmdExecute.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\IndexPage.class
+tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\Help.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\HomePage.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\misc\HelloCommand.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\UpdateRole.class

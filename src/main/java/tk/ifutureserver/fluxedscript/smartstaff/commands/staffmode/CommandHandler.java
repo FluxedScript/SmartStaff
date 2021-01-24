@@ -1,6 +1,5 @@
 package tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +13,7 @@ public class CommandHandler implements CommandExecutor
     private static final HashMap<String, CommandInterface> commands = new HashMap<>();
 
     //Register method.
-    public void register(String name, CommandInterface cmd) {
+    public void register(String name, CommandInterface cmd) {  // Main class register the commands
 
         //Put command into hashmap
         commands.put(name, cmd);

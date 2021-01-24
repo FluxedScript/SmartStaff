@@ -185,16 +185,17 @@ public class StaffData {
         }
     }
     public static boolean MakeRole(String Rank,String senderrank, String pexrank) {
-        System.out.print(roles);
         if(!(roles.get(senderrank).contains("MANAGE_ROLES") || roles.get(senderrank).contains("ADMINISTRATOR") || roles.get(senderrank).contains("MANGE_MEMBERS"))) {
             return false; //So if they don't have the permissions to do it
         }
         ArrayList<String> values = new ArrayList<>();
 
         roles.put(Rank.toLowerCase(), values);
-        rolearray.put(Rank.toLowerCase(), pexrank);
-        System.out.print(roles);
-        System.out.print(rolearray);
+        for(String correct_group : permissions.getGroups()) {
+            if (correct_group.equalsIgnoreCase(pexrank)) {
+                rolearray.put(Rank.toLowerCase(), correct_group);
+            }
+        }
         return true;
     }
     public static boolean RemoveRole(String Rank,String senderrank) {
@@ -207,9 +208,7 @@ public class StaffData {
             String rank = usersroles.get(value);
             if (rank.equals(Rank.toLowerCase())) {
                 usersroles.remove(value);
-                System.out.print(allowedusers);
                 allowedusers.remove(value);
-                System.out.print(allowedusers);
                 activeusers.remove(value);
                 OfflinePlayer player = Bukkit.getOfflinePlayer(value);
                 String[] groups = permissions.getPlayerGroups(null, player);
@@ -254,7 +253,13 @@ public class StaffData {
         if (activeusers.contains(idkey)) {
             OfflinePlayer player = Bukkit.getOfflinePlayer(idkey);
             for (String group : permissions.getPlayerGroups(null, player)) {
-                permissions.playerRemoveGroup(null, player, group);
+                if (!(permissions.playerRemoveGroup(null, player, group))){
+                     for(String correct_group : permissions.getGroups()){
+                         if (correct_group.equalsIgnoreCase(group)){
+                             permissions.playerRemoveGroup(null, player, group);
+                         }
+                     }
+                }
             }
 
             permissions.playerAddGroup(null, player, rolearray.get(role));
@@ -383,7 +388,6 @@ public class StaffData {
 
     @SuppressWarnings("unchecked")
     public static void LoadData(@org.jetbrains.annotations.NotNull File folder) {
-        System.out.print(folder.toPath().toString());
         try {
             FileInputStream fis = new FileInputStream(
                     new File(folder.toString()+ File.separator, "staffmodedata.ser"));
@@ -460,7 +464,6 @@ public class StaffData {
             perms.add("MANAGE_ROLES");
             perms.add("MANAGE_MEMBERS");
             roles.put("console", perms); //If no role found
-            System.out.print("Roles:"+roles);
 
         } catch (ClassNotFoundException c) {
             System.out.println("Class not found");

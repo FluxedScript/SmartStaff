@@ -23,9 +23,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="Changed to intelij">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/html/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_12_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spigotmc_spigot_api_1_12_2_R0_1_SNAPSHOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/StaffData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/StaffData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/TabCompletion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/TabCompletion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/UpdateRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/roles/UpdateRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/staff/getStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/commands/staffmode/minis/staff/getStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +46,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -180,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611428325411</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changed index.html">
+      <created>1611488303303</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1611488303303</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changed index.html">
+      <created>1611488367200</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1611488367200</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +229,8 @@
     <MESSAGE value="Updated .igtignore" />
     <MESSAGE value="Updated .gitignore" />
     <MESSAGE value="Error pages and basic index page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Error pages and basic index page" />
+    <MESSAGE value="Changed index.html" />
+    <MESSAGE value="Bug fixes, help command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes, help command" />
   </component>
 </project>

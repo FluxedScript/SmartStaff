@@ -6,13 +6,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.CommandInterface;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.StaffData;
-import tk.ifutureserver.fluxedscript.smartstaff.util.Numbers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class getStaff implements CommandInterface {
+    @SuppressWarnings("UnnecessaryLocalVariable")
     public ArrayList<String> getStaff2(int pagenum) {
         ArrayList<String> leaderboard = new ArrayList<>();
         HashMap<String, String> tempusers = StaffData.getAllowedStaff();
@@ -39,12 +39,14 @@ public class getStaff implements CommandInterface {
                         + " to read the next page!");
                 break;
             } else if (count == (12 * (pagenum - 1))) {
-                leaderboard.removeAll(leaderboard);
+                ArrayList<String> lb = leaderboard;
+                leaderboard.removeAll(lb);
                 leaderboard.add(e);
             }
         }
         if (count == 0){
-            leaderboard.removeAll(leaderboard);
+            ArrayList<String> lb = leaderboard;
+            leaderboard.removeAll(lb);
             leaderboard.add(ChatColor.DARK_GRAY+"No staff onboard this ship!");
         }
         return leaderboard;

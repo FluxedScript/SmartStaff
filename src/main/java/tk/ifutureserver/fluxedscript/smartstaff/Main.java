@@ -28,6 +28,7 @@ import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.D
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.UpdateRole;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.roles.ViewRole;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.AddStaff;
+import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.Help;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.RemoveStaff;
 import tk.ifutureserver.fluxedscript.smartstaff.commands.staffmode.minis.staff.getStaff;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
@@ -228,6 +229,9 @@ public class Main extends JavaPlugin implements Listener {
 
         handler.register("updaterole",new UpdateRole());
         handler.register("viewroles",new ViewRole());
+
+        handler.register("help",new Help());
+
         getCommand("staffmode").setExecutor(handler);
         getCommand("staffmode").setTabCompleter(new TabCompletion());
     }
