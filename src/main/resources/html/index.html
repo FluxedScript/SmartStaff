@@ -1,24 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Server page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SmartStaff web panel</title>
 </head>
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html {
+    padding: 5px;
+    background-color: #5e6063;
+    font-family: Verdana, sans-serif;
+}
+
+.page {
+    width: 80%;
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.section {
+     margin: 3px;
+     background-color: #FFFFFF;
+     text-align: left;
+}
+
+p {
+    margin-bottom: 10px;
+}
+.header {
+    background-color: #0d5cd1;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: left;
+}
+</style>
 <body>
-    <h1>Welcome to the server panel!</h1>
+<div class="page">
+    <h1 style="float: center; text-align: center;padding-bottom: 5%;"> SmartStaff Web Panel </h1>
+    <div class="section">
+        <h2> Success! The plugin has installed! </h2><br />
+        <div class="text">
+            <p>
+                Currently you have no files. Please edit the /html/index.html to set this to a new theme.
+                There may be some templates to use for such a page.
+            </p>
+            <p>
+                If you are a regular user or an intrigued player, please tell the server owners to redesign the page by choosing a template or making their own files. Thanks for checking on SmartStaff.
+            </p>
+        </div>
+        <div class="header"> Configuration </div>
+        <div class="text">
+            <h3>Get Started</h3>
+            <p>If you are an admin RMTpass in the config.yml contains the credentials to access console remotely </p>
+            <p>If your developer wants to implement features into a bot/website make sure you give them APIpass from the config.yml </p>
+            <p>To prevent abuse you can update the BlockedCmds in the config.yml with a list of commands you do not want to run</p>
 
-    <h2>Get Started</h2>
-    <p>You are at your server ip with the port: 4000</p>
-    <p>If you are an admin RMTpass in the config.yml contains the credentials to access console remotely </p>
-    <p>If your developer wants to implement features into a bot/website make sure you give them APIpass from the config.yml </p>
-    <p>To prevent abuse you can update the BlockedCmds in the config.yml with a list of commands you do not want to run</p>
+            <h3>Custom page/html</h3>
+            <p>To have custom html here, please contact a web developer or use a premade html/css/js scripts and put it in the html folder</p>
+            <p>If there are any issues feel free to reach out to the plugin developer</p>
 
-    <h2>Custom page/html</h2>
-    <p>To have custom html here, please contact a web developer or use a premade html/css/js scripts and put it in the html folder</p>
-    <p>If there are any issues feel free to reach out to the plugin developer</p>
-
-    <h2>Api development</h2>
-    <p>This plugin comes with an api that can be accessed by passing a valid APIpass </p>
-    <p>To prevent abuse you can update the BlockedCmds in the config.yml with a list of commands you do not want to run</p>
+            <h3>Api development</h3>
+            <p>This plugin comes with an api that can be accessed by passing a valid APIpass </p>
+            <p>To prevent abuse you can update the BlockedCmds in the config.yml with a list of commands you do not want to run</p>
+        </div>
+        <div class="header"> PHP </div>
+        <div class="text">
+            <p>
+                SmartStaff web panel currently does not support PHP.
+            </p>
+        </div>
+        <div class="header"> JavaScript </div>
+        <div class="text">
+            <p>
+                SmartStaff web panel does support client side JavaScript. However, it does not support node.js.
+            </p>
+        </div>
+        <div class="header"> Reporting Issues </div>
+        <div class="text">
+            <p>
+                Please report issues to the developer by GitHub or other means. If using GitHub to report bugs, please check
+                <a href="https://github.com/FluxedScript/SmartStaff/issues">issues for existing bugs</a> before submitting a new issue.
+            </p>
+            <p>
+                If you are having issues writing html/css/js please do not make an issue, as this isn't a plugin issue.
+            </p>
+        </div>
+    </div>
+</div>
 </body>
 </html>
