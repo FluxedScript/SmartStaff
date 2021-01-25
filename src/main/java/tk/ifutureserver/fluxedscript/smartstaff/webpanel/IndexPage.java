@@ -12,8 +12,6 @@ import java.io.OutputStream;
 import java.net.URI;
 
 public class IndexPage implements HttpHandler {
-
-
     public void handle(HttpExchange t) throws IOException {
         String root = Main.DataFolder + File.separator + "html";
         URI uri = t.getRequestURI();
@@ -36,13 +34,13 @@ public class IndexPage implements HttpHandler {
         if (!file.isFile()) {
             // Object does not exist or is not a file: reject with 404 error.
             file = new File(root + "/errorpages/404.html").getCanonicalFile();
-            if (!file.isFile()) {
+            if (!file.isFile()) { // No files exist
                 String response = "404 (Not Found)\n";
                 t.sendResponseHeaders(404, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
                 os.close();
-            } else{
+            } else{  // check if 404 page exists
                 Headers h = t.getResponseHeaders();
                 h.set("Content-Type", "text/html");
                 t.sendResponseHeaders(200, 0);
@@ -68,14 +66,14 @@ public class IndexPage implements HttpHandler {
             t.sendResponseHeaders(200, 0);
 
             OutputStream os = t.getResponseBody();
-            FileInputStream fs = new FileInputStream(file);
+            FileInputStream fs = new FileInputStream(file); //get the file
             final byte[] buffer = new byte[0x10000];
             int count = 0;
             while ((count = fs.read(buffer)) >= 0) {
                 os.write(buffer,0,count);
             }
-            fs.close();
-            os.close();
+            fs.close(); // close file system
+            os.close(); // close output stream
         }
     }
 }
