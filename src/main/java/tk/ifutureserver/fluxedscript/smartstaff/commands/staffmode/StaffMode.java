@@ -4,6 +4,7 @@ import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -11,6 +12,7 @@ import org.bukkit.potion.PotionEffect;
 import tk.ifutureserver.fluxedscript.smartstaff.Main;
 import tk.ifutureserver.fluxedscript.smartstaff.util.LangSupport;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.UUID;
@@ -64,10 +66,7 @@ public class StaffMode implements CommandInterface {
                 player.setGameMode(GameMode.SURVIVAL);
                 for (PotionEffect effect : player.getActivePotionEffects())
                     player.removePotionEffect(effect.getType());
-                //Location topfloor = player.getPlayer().getWorld().getHighestBlockAt(player.getPlayer().getLocation().getBlockX(), player.getPlayer().getLocation().getBlockZ()).getLocation();
-                //Location currentloc = player.getLocation();
-                //Location oldloc = player.getLocation().subtract(0, Float.valueOf(df.format(currentloc.distance(topfloor)))-1.0, 0);
-                //player.teleport(oldloc);
+
                 player.getEquipment().clear();
                 player.getInventory().clear();
 
