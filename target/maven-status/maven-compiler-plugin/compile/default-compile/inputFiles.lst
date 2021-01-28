@@ -9,6 +9,7 @@ C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\f
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffMode.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\util\LangSupport.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\webpanel\cmdExecute.java
+C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\events\ChestOpen.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\util\Taxing.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\TabCompletion.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\CommandInterface.java
@@ -18,7 +19,6 @@ C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\f
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\Main.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\getStaff.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\RemoveStaff.java
-C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\webpanel\HomePage.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\events\BlockPlace.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\economy\TaxUser.java
 C:\Users\TK\Documents\coding\plugins\smartstaff\src\main\java\tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffData.java

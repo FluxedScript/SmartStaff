@@ -1,6 +1,7 @@
 tk\ifutureserver\fluxedscript\smartstaff\commands\economy\TaxUser.class
 tk\ifutureserver\fluxedscript\smartstaff\util\LangSupport.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffData.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getUser.class
 tk\ifutureserver\fluxedscript\smartstaff\Main.class
 tk\ifutureserver\fluxedscript\smartstaff\util\Taxing$1.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\DeleteRole.class

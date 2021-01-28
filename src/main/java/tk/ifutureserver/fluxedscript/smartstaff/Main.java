@@ -36,7 +36,7 @@ import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.IndexPage;
-import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.ApiHome;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups.getUser;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.cmdExecute;
 
 import java.io.*;
@@ -100,7 +100,7 @@ public class Main extends JavaPlugin implements Listener {
 		//setupChat();
         saveDefaultConfig();
         if (getConfig().get("RMTpass").equals("LinuxRulesDonald123213123")){
-            char[] possibleCharacters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()-_=+[{]}\\|;:,<.>/?").toCharArray();
+            char[] possibleCharacters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$^&*()-_=+[|;:,<.>/?").toCharArray();
             String randomPass = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
             String randomPass2 = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
             getConfig().set("RMTpass",randomPass);
@@ -172,9 +172,10 @@ public class Main extends JavaPlugin implements Listener {
         oldpassword = (String) Main.config().get("RMTpass");
         oldapipassword = (String) Main.config().get("APIpass");
         if (server != null) {
-            server.createContext("/", new IndexPage());
+            server.createContext("/api/groups/getuser", new getUser());
             server.createContext("/execute/", new cmdExecute());
-            server.createContext("/api/", new ApiHome());
+            //server.createContext("/", new IndexPage());
+
             //server.createContext("/static", new StaticFileServer());
             server.setExecutor(null);
             server.start();
