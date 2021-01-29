@@ -36,6 +36,7 @@ import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerInteract;
 import tk.ifutureserver.fluxedscript.smartstaff.events.PlayerJoin;
 import tk.ifutureserver.fluxedscript.smartstaff.util.Taxing;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.IndexPage;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups.getGroup;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups.getUser;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.cmdExecute;
 
@@ -173,8 +174,9 @@ public class Main extends JavaPlugin implements Listener {
         oldapipassword = (String) Main.config().get("APIpass");
         if (server != null) {
             server.createContext("/api/groups/getuser", new getUser());
+            server.createContext("/api/groups/getgroup", new getGroup());
             server.createContext("/execute/", new cmdExecute());
-            //server.createContext("/", new IndexPage());
+            server.createContext("/", new IndexPage());
 
             //server.createContext("/static", new StaticFileServer());
             server.setExecutor(null);

@@ -23,6 +23,7 @@ tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffMode.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\CommandInterface.class
 tk\ifutureserver\fluxedscript\smartstaff\util\Taxing.class
 tk\ifutureserver\fluxedscript\smartstaff\util\ChatUtils.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getGroup.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\AddStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\getStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\ApiHome.class
