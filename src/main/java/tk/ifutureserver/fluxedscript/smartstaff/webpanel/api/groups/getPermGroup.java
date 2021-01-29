@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class getGroup implements HttpHandler {
+public class getPermGroup implements HttpHandler {
     Permission perms = Main.getPermissions();
     @SuppressWarnings("unchecked")
     public void handle(HttpExchange t) throws IOException {

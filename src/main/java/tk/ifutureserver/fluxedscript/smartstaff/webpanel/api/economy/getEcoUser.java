@@ -1,24 +1,24 @@
-package tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups;
+package tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.economy;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.json.simple.JSONArray;
-import tk.ifutureserver.fluxedscript.smartstaff.Main;
 import org.json.simple.JSONObject;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class getUser implements HttpHandler {
-    Permission perms = Main.getPermissions();
+public class getEcoUser implements HttpHandler {
+    Economy eco = Main.getEconomy();
+    @SuppressWarnings("unchecked")
     public void handle(HttpExchange t) throws IOException {
         String oldpassword = Main.oldapipassword;
         String user = null;
@@ -55,18 +55,11 @@ public class getUser implements HttpHandler {
                     return;
                 }
                 JSONObject json_obj = new JSONObject();
-                String [] permList = perms.getPlayerGroups(null, player);
-                List<String> list = new ArrayList<String>();
-                for (String group : permList){
-                    list.add(group);
-                }
-                JSONArray array2 = new JSONArray();
-                for(int i = 0; i < list.size(); i++) {
-                    array2.add(list.get(i));
-                }
-
+                long balance = (long) eco.getBalance(player);
                 json_obj.put("success", true);
-                json_obj.put("groups", array2);
+                json_obj.put("uuid", player.getUniqueId());
+                json_obj.put("last_played", player.getLastPlayed());
+                json_obj.put("balance", balance);
                 // do something with the request parameters
                 final String responseBody = json_obj.toString();
                 t.getResponseHeaders().set("Content-Type", "application/json");

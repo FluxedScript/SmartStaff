@@ -1,11 +1,12 @@
 tk\ifutureserver\fluxedscript\smartstaff\commands\economy\TaxUser.class
 tk\ifutureserver\fluxedscript\smartstaff\util\LangSupport.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffData.class
-tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getUser.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getPermUser.class
 tk\ifutureserver\fluxedscript\smartstaff\Main.class
 tk\ifutureserver\fluxedscript\smartstaff\util\Taxing$1.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\DeleteRole.class
 tk\ifutureserver\fluxedscript\smartstaff\events\PlayerJoin.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getPermGroup.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\perms\RemovePerm.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\CreateRole.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\cmdExecute.class
@@ -23,7 +24,6 @@ tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffMode.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\CommandInterface.class
 tk\ifutureserver\fluxedscript\smartstaff\util\Taxing.class
 tk\ifutureserver\fluxedscript\smartstaff\util\ChatUtils.class
-tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\groups\getGroup.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\AddStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\getStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\ApiHome.class
@@ -31,4 +31,5 @@ tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\perms\AddPerm.
 tk\ifutureserver\fluxedscript\smartstaff\events\BlockPlace.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\ViewRole.class
 tk\ifutureserver\fluxedscript\smartstaff\events\ChestOpen.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\economy\getEcoUser.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\TabCompletion.class
