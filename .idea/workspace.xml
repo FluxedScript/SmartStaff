@@ -23,9 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="Changed to intelij">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getOnlinePlayers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612086355787</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Addition of getUser for /api/players/getuser">
+      <created>1612087564690</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1612087564690</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,6 +341,7 @@
     <MESSAGE value="Added GET /api/economy/getuser path to api." />
     <MESSAGE value="getEcoList for /api/economy/getlist implementation without sort" />
     <MESSAGE value="Clean up of getEcoList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean up of getEcoList" />
+    <MESSAGE value="Addition of getUser for /api/players/getuser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addition of getUser for /api/players/getuser" />
   </component>
 </project>
