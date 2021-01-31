@@ -20,6 +20,7 @@ tk\ifutureserver\fluxedscript\smartstaff\events\PlayerInteract.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\CommandHandler.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\RemoveStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\playtime\PlayTimeCommand.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\players\GetOfflinePlayers.class
 tk\ifutureserver\fluxedscript\smartstaff\util\TabComplete.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\StaffMode.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\CommandInterface.class
