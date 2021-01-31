@@ -1,8 +1,5 @@
 package tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.economy;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import net.milkbowl.vault.economy.Economy;
@@ -14,8 +11,6 @@ import tk.ifutureserver.fluxedscript.smartstaff.Main;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
-import java.util.stream.Stream;
 
 public class getEcoList implements HttpHandler {
     Economy eco = Main.getEconomy();
@@ -26,7 +21,7 @@ public class getEcoList implements HttpHandler {
         String checkpassword = null;
         String response = t.getRequestURI().getQuery(); //if http://localhost:4000/api?name=john&password=hi
 
-        String responseBody = null;
+        String responseBody;
 
         if(t.getRequestURI().getQuery() != null) {
             String[] parts = response.split("&");

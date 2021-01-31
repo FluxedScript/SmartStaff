@@ -47,7 +47,7 @@ public class getUser implements HttpHandler {
                 return;
             }
             if(user != null) {
-                OfflinePlayer player = Bukkit.getOfflinePlayer(user);
+                @SuppressWarnings("deprecation") OfflinePlayer player = Bukkit.getOfflinePlayer(user);
                 if (player == null){
                     String response2 = "Invalid username";
                     t.sendResponseHeaders(400, response2.length());
@@ -58,7 +58,7 @@ public class getUser implements HttpHandler {
                 }
                 JSONObject json_obj = new JSONObject();
                 String [] permList = perms.getPlayerGroups(null, player);
-                List<String> list = new ArrayList<String>(Arrays.asList(permList));
+                List<String> list = new ArrayList<>(Arrays.asList(permList));
                 JSONArray array2 = new JSONArray();
                 array2.addAll(list);
                 long balance = (long) eco.getBalance(player);
@@ -75,7 +75,7 @@ public class getUser implements HttpHandler {
                 // do something with the request parameters
                 final String responseBody = json_obj.toString();
                 t.getResponseHeaders().set("Content-Type", "application/json");
-                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);;
+                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);
                 t.sendResponseHeaders(200, rawResponseBody.length);
                 t.getResponseBody().write(rawResponseBody);
             }

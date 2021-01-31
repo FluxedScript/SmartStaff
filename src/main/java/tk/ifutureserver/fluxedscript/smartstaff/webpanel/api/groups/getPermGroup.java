@@ -59,7 +59,7 @@ public class getPermGroup implements HttpHandler {
                     return;
                 }
                 JSONObject json_obj = new JSONObject();
-                List<String> list = new ArrayList<String>();
+                List<String> list = new ArrayList<>();
                 for(OfflinePlayer player : Bukkit.getOfflinePlayers()) {
                     if (perms.playerInGroup(null, player, group2)) {
                         list.add(player.getName());
@@ -74,7 +74,7 @@ public class getPermGroup implements HttpHandler {
                 // do something with the request parameters
                 final String responseBody = json_obj.toString();
                 t.getResponseHeaders().set("Content-Type", "application/json");
-                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);;
+                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);
                 t.sendResponseHeaders(200, rawResponseBody.length);
                 t.getResponseBody().write(rawResponseBody);
             }

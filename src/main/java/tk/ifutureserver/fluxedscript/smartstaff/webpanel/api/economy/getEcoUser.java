@@ -3,18 +3,14 @@ package tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.economy;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
 
 public class getEcoUser implements HttpHandler {
     Economy eco = Main.getEconomy();
@@ -45,7 +41,7 @@ public class getEcoUser implements HttpHandler {
                 return;
             }
             if(user != null) {
-                OfflinePlayer player = Bukkit.getOfflinePlayer(user);
+                @SuppressWarnings("deprecation") OfflinePlayer player = Bukkit.getOfflinePlayer(user);
                 if (player == null){
                     String response2 = "Invalid username";
                     t.sendResponseHeaders(400, response2.length());
@@ -63,7 +59,7 @@ public class getEcoUser implements HttpHandler {
                 // do something with the request parameters
                 final String responseBody = json_obj.toString();
                 t.getResponseHeaders().set("Content-Type", "application/json");
-                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);;
+                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);
                 t.sendResponseHeaders(200, rawResponseBody.length);
                 t.getResponseBody().write(rawResponseBody);
             }

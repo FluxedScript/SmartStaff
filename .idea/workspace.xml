@@ -23,10 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="Changed to intelij">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getOnlinePlayers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/economy/getEcoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/economy/getEcoList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/economy/getEcoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/economy/getEcoUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/groups/getPermGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/groups/getPermGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/groups/getPermUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/groups/getPermUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getOnlinePlayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getOnlinePlayers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/api/players/getUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/smartstaff-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -303,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612087564690</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Addition of getUser for /api/players/getonline">
+      <created>1612091120467</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612091120467</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,6 +352,8 @@
     <MESSAGE value="getEcoList for /api/economy/getlist implementation without sort" />
     <MESSAGE value="Clean up of getEcoList" />
     <MESSAGE value="Addition of getUser for /api/players/getuser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addition of getUser for /api/players/getuser" />
+    <MESSAGE value="Addition of getUser for /api/players/getonline" />
+    <MESSAGE value="File cleanup and optimisation" />
+    <option name="LAST_COMMIT_MESSAGE" value="File cleanup and optimisation" />
   </component>
 </project>

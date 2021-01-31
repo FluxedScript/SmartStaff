@@ -6,19 +6,19 @@ import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.json.simple.JSONArray;
-import tk.ifutureserver.fluxedscript.smartstaff.Main;
 import org.json.simple.JSONObject;
+import tk.ifutureserver.fluxedscript.smartstaff.Main;
 
-import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class getPermUser implements HttpHandler {
     Permission perms = Main.getPermissions();
+    @SuppressWarnings("unchecked")
     public void handle(HttpExchange t) throws IOException {
         String oldpassword = Main.oldapipassword;
         String user = null;
@@ -45,7 +45,7 @@ public class getPermUser implements HttpHandler {
                 return;
             }
             if(user != null) {
-                OfflinePlayer player = Bukkit.getOfflinePlayer(user);
+                @SuppressWarnings("deprecation") OfflinePlayer player = Bukkit.getOfflinePlayer(user);
                 if (player == null){
                     String response2 = "Invalid username";
                     t.sendResponseHeaders(400, response2.length());
@@ -56,21 +56,17 @@ public class getPermUser implements HttpHandler {
                 }
                 JSONObject json_obj = new JSONObject();
                 String [] permList = perms.getPlayerGroups(null, player);
-                List<String> list = new ArrayList<String>();
-                for (String group : permList){
-                    list.add(group);
-                }
+                List<String> list = new ArrayList<>();
+                Collections.addAll(list, permList);
                 JSONArray array2 = new JSONArray();
-                for(int i = 0; i < list.size(); i++) {
-                    array2.add(list.get(i));
-                }
+                array2.addAll(list);
 
                 json_obj.put("success", true);
                 json_obj.put("groups", array2);
                 // do something with the request parameters
                 final String responseBody = json_obj.toString();
                 t.getResponseHeaders().set("Content-Type", "application/json");
-                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);;
+                final byte[] rawResponseBody = responseBody.getBytes(StandardCharsets.UTF_8);
                 t.sendResponseHeaders(200, rawResponseBody.length);
                 t.getResponseBody().write(rawResponseBody);
             }
