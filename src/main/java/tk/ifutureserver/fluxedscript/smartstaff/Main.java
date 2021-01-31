@@ -40,6 +40,7 @@ import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.economy.getEcoList;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.economy.getEcoUser;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups.getPermGroup;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.groups.getPermUser;
+import tk.ifutureserver.fluxedscript.smartstaff.webpanel.api.players.getUser;
 import tk.ifutureserver.fluxedscript.smartstaff.webpanel.cmdExecute;
 
 import java.io.*;
@@ -179,6 +180,7 @@ public class Main extends JavaPlugin implements Listener {
             server.createContext("/api/groups/getgroup", new getPermGroup());
             server.createContext("/api/economy/getuser", new getEcoUser());
             server.createContext("/api/economy/getlist", new getEcoList());
+            server.createContext("/api/players/getuser", new getUser());
             server.createContext("/execute/", new cmdExecute());
             server.createContext("/", new IndexPage());
 
