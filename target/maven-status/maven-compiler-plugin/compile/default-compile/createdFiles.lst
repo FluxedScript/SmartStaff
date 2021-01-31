@@ -28,6 +28,7 @@ tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\AddStaff
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\staff\getStaff.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\ApiHome.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\perms\AddPerm.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\economy\getEcoList.class
 tk\ifutureserver\fluxedscript\smartstaff\events\BlockPlace.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\minis\roles\ViewRole.class
 tk\ifutureserver\fluxedscript\smartstaff\events\ChestOpen.class
