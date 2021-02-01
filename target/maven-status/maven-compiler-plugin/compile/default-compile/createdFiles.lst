@@ -37,3 +37,4 @@ tk\ifutureserver\fluxedscript\smartstaff\events\ChestOpen.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\economy\getEcoUser.class
 tk\ifutureserver\fluxedscript\smartstaff\commands\staffmode\TabCompletion.class
 tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\players\getUser.class
+tk\ifutureserver\fluxedscript\smartstaff\webpanel\api\players\getUserPlayTime.class
