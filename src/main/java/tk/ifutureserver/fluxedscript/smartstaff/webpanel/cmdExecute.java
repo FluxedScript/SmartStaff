@@ -28,11 +28,20 @@ public class cmdExecute implements HttpHandler {
                 }
                 if(mainname.equalsIgnoreCase("cmd") || mainname.equalsIgnoreCase("command") || mainname.equalsIgnoreCase("run")) {
                     cmd = attribute;
-                    System.out.print("CMD: "+attribute);
                 }
             }
         }else {
             return;
+        }
+        for (Object block_cmd :Main.getInstance().getConfig().getList("BlockedCmds")){
+            if (String.valueOf(block_cmd).equalsIgnoreCase(cmd)){
+                String response2 = "Blocked command!";
+                t.sendResponseHeaders(401, response2.length());
+                OutputStream os = t.getResponseBody();
+                os.write(response2.getBytes());
+                os.close();
+                return;
+            }
         }
         if (!(oldpassword.equals(checkpassword))) {
             String response2 = "Invalid password";

@@ -24,7 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b9068410-8443-49f2-92b4-dc0685f8a851" name="Default Changelist" comment="Changed to intelij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/cmdExecute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tk/ifutureserver/fluxedscript/smartstaff/webpanel/cmdExecute.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SmartCash" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -335,7 +336,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612211204711</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update of index.html">
+      <created>1612466915963</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1612466915963</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update of plugin jar">
+      <created>1612466962454</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1612466962454</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -351,8 +366,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added 1.13.2 support" />
-    <MESSAGE value="HTML/CSS web server integration" />
     <MESSAGE value="HTML and CSS web server integration" />
     <MESSAGE value="Updated .igtignore" />
     <MESSAGE value="Updated .gitignore" />
@@ -376,6 +389,8 @@
     <MESSAGE value="Added /api/players/getoffline" />
     <MESSAGE value="Addition of /api/players/getplaytimeuser" />
     <MESSAGE value="Addition of /api/players/getplaytimetop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Addition of /api/players/getplaytimetop" />
+    <MESSAGE value="Update of index.html" />
+    <MESSAGE value="Update of plugin jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of plugin jar" />
   </component>
 </project>
