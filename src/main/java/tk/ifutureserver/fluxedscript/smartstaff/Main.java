@@ -103,12 +103,15 @@ public class Main extends JavaPlugin implements Listener {
         System.out.print(Bukkit.getServer().getClass().getPackage().getName());
 		//setupChat();
         saveDefaultConfig();
+
         if (getConfig().get("RMTpass").equals("LinuxRulesDonald123213123")){
+            FileConfiguration config = getConfig();
+            config.options().copyDefaults(true);
             char[] possibleCharacters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$^&*()-_=+[|;:,<.>/?").toCharArray();
             String randomPass = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
             String randomPass2 = RandomStringUtils.random( (int)(Math.random() * (30 - 10 + 1) + 10), 0, possibleCharacters.length-1, false, false, possibleCharacters, new SecureRandom() );
-            getConfig().set("RMTpass",randomPass);
-            getConfig().set("APIpass",randomPass2);
+            config.set("RMTpass",randomPass);
+            config.set("APIpass",randomPass2);
             saveConfig();
         }
 		taxamount = (float)getConfig().getDouble("taxes");
